@@ -1,6 +1,6 @@
 """Module level imports."""
 
-from tabular.tabular import (
+from tabular.converters import (
     TemplateConverter,
     TemplateGraphConverter,
     RuleGraphConverter
