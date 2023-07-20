@@ -1,0 +1,10 @@
+{% extends "books.j2" %}
+
+{% block books %}
+<book category="{{ data['category'] }}">
+  <title>{{ data["title"] }}</title>
+  <author>{{ data["author"] }}</author>
+  <year>{{ data["year"] }}</year>
+  <price>{{ data["price"] }}</price>
+</book>
+{% endblock %}

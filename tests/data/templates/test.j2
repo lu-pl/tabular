@@ -1,0 +1,10 @@
+<bookstore>
+  {% for _data in table_data %}
+  <book category="{{ _data['category'] }}">
+    <title>{{ _data["title"] }}</title>
+    <author>{{ _data["author"] }}</author>
+    <year>{{ _data["year"] }}</year>
+    <price>{{ _data["price"] }}</price>
+  </book>
+  {% endfor %}
+</bookstore>
