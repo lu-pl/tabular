@@ -1,2 +1,4 @@
-# TabulaR - Functionality for rule-based and template-based DataFrame conversions.
+# TabulaR
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+TabulaR - Functionality for rule-based and template-based DataFrame to RDF conversions.
