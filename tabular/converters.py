@@ -1,6 +1,6 @@
 """TabulaR.
 
-Functionality for rule-based and template-based Dataframe to Graph conversions.
+Functionality for DataFrame to RDF Graph conversions.
 """
 
 import functools
@@ -80,6 +80,7 @@ class TemplateConverter:
         """Build a jinja2.Environment and init."""
         ...
 
+    #maybe make this a staticmethod = reuse in RowGraphConverter?
     def _get_table_data(self) -> Generator[dict, None, None]:
         """Construct a generator of row data dictionaries.
 
@@ -128,7 +129,7 @@ class TemplateConverter:
         """Render jinja template(s).
 
         Every template gets passed the entire table data;
-        so looping must be done in the template.
+        so iteration must be done in the template.
         The data passed to the template is a generator of row dictionaries
         and is accessible as 'table_data' in the template.
         """
@@ -146,7 +147,7 @@ class TemplateConverter:
         """Render jinja template(s) by row.
 
         For every row iteration the template gets passed the current row data only;
-        so looping is done at the Python level, not in the template.
+        so iteration is done at the Python level, not in the template.
         The data passed to the template is a dictionary representing a table row
         and is accessible as 'row_data' in the template.
         """
@@ -196,7 +197,7 @@ class TemplateGraphConverter(_GraphConverter, TemplateConverter):
         self._graph = Graph() if graph is None else graph
 
     def to_graph(self) -> Graph:
-        """Parse template renderings and return the graph component."""
+        """Parse template row renderings and return the graph component."""
         self._apply_to_renderings(
             lambda data: self._graph.parse(data=data)
         )
@@ -204,15 +205,50 @@ class TemplateGraphConverter(_GraphConverter, TemplateConverter):
         return self._graph
 
 
+class RowGraphConverter(_GraphConverter):
+    """..."""
+
+    def __init__(self,
+                 dataframe: pd.DataFrame,
+                 *,
+                 row_rule: Callable[[dict], Graph],
+                 graph: Optional[Graph] = None) -> None:
+        """Initialize a RowGraphConverter instance."""
+        self._df = dataframe
+        self._row_rule = row_rule
+        self._graph = Graph() if graph is None else graph
+
+    def _generate_graphs(self) -> Generator[Graph, None, None]:
+        """Construct a generator of subgraphs for merging.
+
+        Iterates over the dataframe component and passes row data
+        as a dictionary to a callable which is responsible for
+        generating an instance of rdflib.Graph.
+        """
+        for _, row in self._df.iterrows():
+            row_dict = row.to_dict()
+            yield self._row_rule(row_dict)
+
+    def to_graph(self):
+        """Merge triples from _generate_graphs and return graph component."""
+        # generate subgraphs
+        _graphs_generator = self._generate_graphs()
+
+        for graph in _graphs_generator:
+            self._graph += graph
+
+        return self._graph
+
+
+
 # maybe call this 'FieldGraphConverter' and also implement a 'RowGraphConverter' class
 class RuleGraphConverter(_GraphConverter):
-    """Rule-based pandas.DataFrame to rdflib.Graph converter.
+    # this docstring is trash -> todo
+    """Callable-based pandas.DataFrame to rdflib.Graph converter.
 
     DFGraphConverter iterates over a dataframe and constructs RDF triples
     by constructing a generator of subgraphs ('field graphs');
-    subgraphs are then merged with an rdflib.Graph component.
-
-    For basic usage examples see https://github.com/lu-pl/rdfdf.
+    subgraphs are then merged into an rdflib.Graph component.
     """
 
     store: dict = dict()
@@ -225,7 +261,7 @@ class RuleGraphConverter(_GraphConverter):
                      Callable[[str], URIRef] | Namespace
                  ] = None,
                  column_rules: _RulesMapping,
-                 graph: Optional[Graph] = None):
+                 graph: Optional[Graph] = None) -> None:
         """Initialize a DFGraphConverter instance."""
         self._df = dataframe
         self._subject_column = subject_column
@@ -250,7 +286,7 @@ class RuleGraphConverter(_GraphConverter):
         return _sub_uri
 
     def _generate_graphs(self) -> Generator[Graph, None, None]:
-        """Loop over the table rows of the provided DataFrame.
+        """Loop over table rows of the provided DataFrame.
 
         Generates and returns a Generator of graph objects for merging.
         """
@@ -290,7 +326,7 @@ class RuleGraphConverter(_GraphConverter):
         return self._graph
 
     def to_graph(self) -> Graph:
-        """Add triples from _generate_triples and return the graph component."""
+        """Merge triples from _generate_graphs and return the graph component."""
         # generate subgraphs
         _graphs_generator = self._generate_graphs()
         # merge subgraphs to graph component
