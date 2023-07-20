@@ -11,8 +11,9 @@ from typing import (
     Callable,
     Generator,
     Iterable,
+    Literal,
     Optional,
-    Self
+    Self,
 )
 
 import pandas as pd
@@ -22,7 +23,7 @@ from jinja2.environment import Template
 from lxml.etree import XMLParser, _Element
 from rdflib import Graph, URIRef, Namespace
 
-from tabular.tabular_types import _RulesMapping
+from tabular.tabular_types import _RulesMapping, _RenderStrategy
 
 
 class _GraphConverter(ABC):
@@ -58,12 +59,14 @@ class TemplateConverter:
     """
 
     def __init__(self,
+                 *,
                  dataframe: pd.DataFrame,
                  template: Template | Iterable[Template],
                  data: Optional[dict] = None
                  ) -> None:
         """Initialize a TemplateConverter."""
         self.dataframe = dataframe
+        # I want kwargs only, so no *templates
         self.template = (
             template
             if isinstance(template, Iterable)
@@ -73,17 +76,26 @@ class TemplateConverter:
 
     # todo:
     @classmethod
-    def initialize_template(cls) -> type[Self]:  # better: functools.partial
-        """Generate a jinja2.Environment and init."""
+    def initialize_template(cls) -> type[Self]:  # better: functools.partial?
+        """Build a jinja2.Environment and init."""
         ...
+
+    def _get_table_data(self) -> Generator[dict, None, None]:
+        """Construct a generator of row data dictionaries.
+
+        This is intended to provide the template data for the render method.
+        """
+        return (
+            row.to_dict()
+            for _, row
+            in self.dataframe.iterrows()
+        )
 
     def _apply_template_to_row(self, row: Series) -> Generator[str, None, None]:
         """Generate a dict from a Series and pass it to Template.render."""
-        # is the update succession relevant here?
         _row_dict = row.to_dict()
-        _data = {"data": _row_dict}
-        # self.data.update(_data) # is there a reason for this update direction
-        _data.update(self.data)
+        _data = {"row_data": _row_dict}
+        self.data.update(_data)
 
         for template in self.template:
             yield template.render(self.data)
@@ -106,47 +118,76 @@ class TemplateConverter:
                              ) -> None:
         """Pass every row rendering to a callable.
 
-        Auxiliary method for side-effect only operations;
-        See the render_to_file method.
+        Auxiliary method for side-effect only operations.
+        +For an application see e.g. the render_to_file method.+
         """
         for rendering in self._apply_template_to_dataframe(self.dataframe):
             call(rendering)
 
+    def render(self) -> str | Generator[str, None, None]:
+        """Render jinja template(s).
+
+        Every template gets passed the entire table data;
+        so looping must be done in the template.
+        The data passed to the template is a generator of row dictionaries
+        and is accessible as 'table_data' in the template.
+        """
+        table_data = {"table_data": self._get_table_data()}
+
+        if len(self.template) > 1:
+            return (
+                template.render(table_data)
+                for template in self.template
+            )
+
+        return self.template[0].render(table_data)
+
+    def render_by_row(self) -> Generator[str, None, None]:
+        """Render jinja template(s) by row.
+
+        For every row iteration the template gets passed the current row data only;
+        so looping is done at the Python level, not in the template.
+        The data passed to the template is a dictionary representing a table row
+        and is accessible as 'row_data' in the template.
+        """
+        return self._apply_template_to_dataframe(self.dataframe)
+
     @functools.wraps(open)
-    def render_to_file(self, *args, mode="w", **kwargs) -> None:
+    def render_to_file(self,
+                       *args,
+                       render_strategy: _RenderStrategy = "table",
+                       mode="w",
+                       **kwargs) -> None:
         """Write renderings to a file.
 
         Signature proxied from builtins.open.
-
-        Convenience method that utilizes the more generic render method.
-        For custom behavior use the _apply_to_renderings method directly.
         """
         with open(*args, mode=mode, **kwargs) as f:
-            self._apply_to_renderings(f.write)
+            match render_strategy:
+                case "row":
+                    self._apply_to_renderings(f.write)
+                case "table":
+                    f.write(self.render())
+                case _:
+                    raise Exception((
+                        f"Unknown render strategy '{render_strategy}'. "
+                        "render_strategy parameter must be either 'table' or 'row'."
+                        ))
 
 
-# https://lxml.de/api/lxml.etree.XMLParser-class.html
 class TemplateXMLConverter(TemplateConverter):
-    """Template-based pandas.DataFrame to lxml.etree converter.
-
+    """Template-based pandas.DataFrame to lxml.etree converter."""
     ...
-    """
-
-    def render_to_xml(self,
-                      parser: XMLParser = XMLParser(ns_clean=True)
-                      ) -> _Element:
-        """Incrementally parse row renderings into an lxml.etree instance."""
-        self._apply_to_renderings(parser.feed)
-        document = parser.close()
-
-        return document
-
 
 
 class TemplateGraphConverter(_GraphConverter, TemplateConverter):
     """Template-based pandas.DataFrame to rdflib.Graph converter.
 
-    ...
+    Iterate over a dataframe and pass row data to a jinja rendering.
+    Row data is available as 'row_data' dictionary within the template.
+
+    to_graph parses renderings with rdflib.Graph.parse
+    and so merges row graphs to an rdflib.Graph component.
     """
 
     def __init__(self, *args, graph: Optional[Graph] = None, **kwargs):
@@ -252,7 +293,6 @@ class RuleGraphConverter(_GraphConverter):
         """Add triples from _generate_triples and return the graph component."""
         # generate subgraphs
         _graphs_generator = self._generate_graphs()
-
         # merge subgraphs to graph component
         self._merge_to_graph_component(_graphs_generator)
 
