@@ -1,0 +1,8 @@
+{% for row in table_data -%}
+<book category="{{ row['category'] }}">
+  <title>{{ row["title"] }}</title>
+  <author>{{ row["author"] }}</author>
+  <year>{{ row["year"] }}</year>
+  <price>{{ row["price"] }}</price>
+</book>
+{%- endfor %}

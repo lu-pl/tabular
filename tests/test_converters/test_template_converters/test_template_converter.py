@@ -2,24 +2,48 @@
 
 from tabular import TemplateConverter
 
-from tests.data import bookstore_df, bookstore_target, bookstore_template
-
-bookstore_template_converter = TemplateConverter(
-    dataframe=bookstore_df,
-    template=bookstore_template
+from tests.data import (
+    bookstore_df,
+    bookstore_target,
+    bookstore_template,
+    books_row_template,
+    books_table_template
 )
 
-# bookstore_template_converter._apply_to_renderings(print)
 
-# for item in bookstore_template_converter.render_by_row():
-#     print(item)
+def test_templateconverter_bookstore():
+    """Test for the TemplateConverter class.
 
-# import xml.etree.ElementTree as et
+    Generates a rendering and compares it to target content.
+    """
+    bookstore_template_converter = TemplateConverter(
+        dataframe=bookstore_df,
+        template=bookstore_template
+    )
 
-# rendering = bookstore_template_converter.render()
-# xml = et.XML(rendering)
-# et.indent(xml)
-# print(et.tostring(xml, encoding="unicode"))
+    bookstore_table = bookstore_template_converter.render()
 
-# rendering = bookstore_template_converter.render()
-# print(rendering)
+    # minor rstrip cheat..
+    assert bookstore_table == bookstore_target.rstrip()
+
+
+def test_temlateconverter_books():
+    """Test for the TemplateConverter class.
+
+    Generates and compares renderings from render and render_by_row.
+    """
+    books_row_template_converter = TemplateConverter(
+        dataframe=bookstore_df,
+        template=books_row_template
+    )
+
+    books_table_template_converter = TemplateConverter(
+        dataframe=bookstore_df,
+        template=books_table_template
+    )
+
+    books_row = "".join(books_row_template_converter.render_by_row())
+    # note: whitespace stripped from template: https://stackoverflow.com/a/36871283/6455731
+    books_table = books_table_template_converter.render()
+
+    assert books_row == books_table
