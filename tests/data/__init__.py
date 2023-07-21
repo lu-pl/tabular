@@ -2,7 +2,10 @@
 
 import importlib.resources
 
+import pandas as pd
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from rdflib import Graph
 
 
 ##################################################
@@ -59,5 +62,49 @@ bookstore_target_path = (
 # bookstore_target
 with open(bookstore_target_path) as f:
     bookstore_target: str = f.read()
+
+
+##################################################
+#### cortab data
+
+cortab_name_acronym_template_path = (
+    importlib.resources
+    .files("tests.data.templates")
+    .joinpath("template_cortab_name_acronym.ttl")
+)
+
+cortab_name_acronym_env = Environment(
+    loader=FileSystemLoader(cortab_name_acronym_template_path.parent),
+    autoescape=select_autoescape()
+)
+
+cortab_name_acronym_template = cortab_name_acronym_env.get_template(
+    cortab_name_acronym_template_path.name
+)
+
+cortab_name_acronym_table = [
+    {
+        "corpusAcronym": "ReM",
+        "corpusName": "Reference corpus Middle High German"
+    },
+    {
+        "corpusAcronym": "SweDraCor",
+        "corpusName": "Swedish Drama Corpus"
+    }
+]
+
+cortab_name_acronym_df = pd.DataFrame(data=cortab_name_acronym_table)
+
+cortab_name_acronym_path = (
+    importlib.resources
+    .files("tests.data.targets.graphs")
+    .joinpath("cortab_name_acronym.ttl")
+)
+
+cortab_name_acronym_graph = Graph()
+cortab_name_acronym_graph.parse(source=cortab_name_acronym_path)
+
+
+
 
 ##################################################

@@ -1,0 +1,30 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix crmcls: <https://clscor.io/ontologies/CRMcls/> .
+
+{% set lower_acronym = row_data['corpusAcronym'] | lower %}
+{% set acronym = row_data['corpusAcronym'] %}
+{% set name = row_data["corpusName"] %}
+{% set corpus_name = row_data['corpusName'] | trim %}
+{% set counter = utils["counter"] %}
+{% set appellation_count_1 = counter() %}
+{% set appellation_count_2 = counter() %}
+    
+    
+# Field: corpusName
+    <https://{{lower_acronym}}.clscor.io/entity/corpus> a crmcls:X1_Corpus ;
+    crm:P1_is_identified_by <https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_1}}> .
+
+<https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_1}}> a crm:E41_Appellation ;
+        crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
+    rdf:value "{{name}}".
+
+# Field: corpusAcronym
+
+<https://{{lower_acronym}}.clscor.io/entity/corpus> a crmcls:X1_Corpus ;
+        crm:P1_is_identified_by <https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_2}}> .
+
+<https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_2}}> a crm:E41_Appellation ;
+        crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/acronym> ;
+        rdf:value "{{acronym}}" .
