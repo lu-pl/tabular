@@ -20,7 +20,7 @@ import pandas as pd
 from pandas.core.series import Series
 
 from jinja2.environment import Template
-from lxml.etree import XMLParser, _Element
+# from lxml.etree import XMLParser, _Element
 from rdflib import Graph, URIRef, Namespace
 
 from tabular.tabular_types import _RulesMapping, _RenderStrategy
@@ -80,7 +80,7 @@ class TemplateConverter:
         """Build a jinja2.Environment and init."""
         ...
 
-    #maybe make this a staticmethod = reuse in RowGraphConverter?
+    # maybe make this a staticmethod = reuse in RowGraphConverter?
     def _get_table_data(self) -> Generator[dict, None, None]:
         """Construct a generator of row data dictionaries.
 
