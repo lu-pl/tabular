@@ -12,11 +12,11 @@ See for example the `TemplateXMLConverter` class. [todo]
 * python >= 3.10
 
 ## Usage
-TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
+T
 
 ### Template converters
 
-Template converters are based on the generic `TemplateConverter` class which iterates over a dataframe and passes table data to Jinja renderings.
+Template converters are based on the generic `TemplateConverter` class which allows to iterate over a dataframe and pass table data to Jinja renderings.
 
 Two different render strategies are available through the `render` method and the `render_by_row` method respectively.
 
