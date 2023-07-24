@@ -95,8 +95,8 @@ row_converter = TemplateConverter(
 print(row_converter.render_by_row())
 ```
 
-* Warning: It is not yet possible to pass a string representing a path to the template parameter; this shall be implemented shorty.
-  For now the template parameter expects a `jinja2.Template` object.
+> Warning: It is not yet possible to pass a string representing a path to the template parameter; this shall be implemented shorty.
+> For now the template parameter expects a `jinja2.Template` object.
   
 ### Python/callable converters
 
