@@ -285,9 +285,9 @@ class FieldGraphConverter(_GraphConverter):
     def __init__(self,
                  dataframe: pd.DataFrame,
                  *,
-                 subject_column: str,
+                 subject_column: Any,
                  subject_rule: Optional[
-                     Callable[[str], URIRef] | Namespace
+                     Callable[[Any], URIRef] | Namespace
                  ] = None,
                  column_rules: _RulesMapping,
                  graph: Optional[Graph] = None) -> None:
