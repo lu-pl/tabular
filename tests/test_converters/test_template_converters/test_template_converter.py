@@ -47,3 +47,44 @@ def test_temlateconverter_books():
     books_table = books_table_template_converter.render()
 
     assert books_row == books_table
+
+
+
+##################################################
+
+import pandas as pd
+from tabular import TemplateConverter
+
+table = [
+    {
+        'category': 'children',
+        'title': 'Harry Potter',
+        'author': 'J K. Rowling',
+        'year': 2005,
+        'price': 29.99
+    },
+    {
+        'category': 'web',
+        'title': 'Learning XML',
+        'author': 'Erik T. Ray',
+        'year': 2003,
+        'price': 39.95
+    }
+]
+
+df = pd.DataFrame(data=table)
+
+
+table_converter = TemplateConverter(
+    dataframe=df,
+    template="./table_converter.j2"
+)
+
+print(table_converter.render())
+
+row_converter = TemplateConverter(
+    dataframe=df,
+    template="./row_converter.j2"
+)
+
+print(row_converter.render_by_row())

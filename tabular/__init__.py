@@ -3,6 +3,6 @@
 from tabular.converters import (
     TemplateConverter,
     TemplateGraphConverter,
-    RuleGraphConverter,
+    FieldGraphConverter,
     RowGraphConverter
 )
