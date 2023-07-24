@@ -43,7 +43,7 @@ Here the table iteration is done in the template:
 {%- endfor %}
 ```
 
-The second template on the other hand depends on external iteration:
+The template below on the other hand depends on external iteration:
 ```jinja
 {# row_template.j2 #}
 
