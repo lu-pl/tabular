@@ -12,7 +12,7 @@ See for example the `TemplateXMLConverter` class. [todo]
 * python >= 3.10
 
 ## Usage
-T
+TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
 
 ### Template converters
 
