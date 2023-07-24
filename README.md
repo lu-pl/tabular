@@ -99,6 +99,8 @@ print(row_converter.render_by_row())
 > Warning: It is not yet possible to pass a string representing a path to the template parameter; this shall be implemented shortly.
 > For now the template parameter expects a `jinja2.Template` object.
   
+> Note that `TemplateConverter` produces just *text* that in this case happens to be XML. A custom converter subclassing `TemplateConverter` can parse renderings into arbitrary object abstractions - see the `TemplateGraphConverter` class which parses renderings into an `rdflib.Graph` instance.
+
 ### Python/callable converters
 
 
