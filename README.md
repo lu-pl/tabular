@@ -1,4 +1,4 @@
-![<img src="lodkit.png" width=10% height=10%>](./tabular_icon.png)
+<!-- ![<img src="lodkit.png" width=10% height=10%>](./tabular_icon.png) -->
 # TabulaR
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
