@@ -54,8 +54,20 @@ class _GraphConverter(ABC):
 class TemplateConverter:
     """General TemplateConverter class.
 
-    Iterate over a dataframe and pass row data to a jinja rendering.
-    Row data is available as 'data' dictionary within the template.
+    Iterate over a dataframe and pass table data to a jinja rendering.
+
+    Two render strategies are available:
+
+    - "table"
+      Every template gets passed the entire table data as "table_data";
+      this means that iteration must be done in the template.
+      See the render method.
+
+    - "row":
+      For every row iteration the template gets passed the current row data only;
+      so iteration is done at the Python level, not in the template.
+      Row data is available as 'row_data' dictionary within the template.
+      See the render_by_row method.
     """
 
     def __init__(self,
@@ -119,8 +131,8 @@ class TemplateConverter:
                              ) -> None:
         """Pass every row rendering to a callable.
 
-        Auxiliary method for side-effect only operations.
-        +For an application see e.g. the render_to_file method.+
+        Auxiliary method for side-effect-only operations.
+        For an application see e.g. the render_to_file method.
         """
         for rendering in self._apply_template_to_dataframe(self.dataframe):
             call(rendering)
@@ -184,11 +196,12 @@ class TemplateXMLConverter(TemplateConverter):
 class TemplateGraphConverter(_GraphConverter, TemplateConverter):
     """Template-based pandas.DataFrame to rdflib.Graph converter.
 
-    Iterate over a dataframe and pass row data to a jinja rendering.
-    Row data is available as 'row_data' dictionary within the template.
+    Iterates over a dataframe and passes table data to a jinja rendering.
+    Table data is available as "table_data" or "row_data" respectively;
+    see the 'render' and 'render_by_row' methods.
 
-    to_graph parses renderings with rdflib.Graph.parse
-    and so merges row graphs to an rdflib.Graph component.
+    'to_graph' parses renderings with rdflib.Graph.parse
+    and so merges row renderings to an rdflib.Graph component.
     """
 
     def __init__(self, *args, graph: Optional[Graph] = None, **kwargs):
@@ -206,7 +219,14 @@ class TemplateGraphConverter(_GraphConverter, TemplateConverter):
 
 
 class RowGraphConverter(_GraphConverter):
-    """..."""
+    """Callable-based pandas.DataFrame to rdflib.Graph converter.
+
+    Iterates over a dataframe and applies row_rule for every row.
+
+    For every row the row_rule gets passed the row_data as dictionry
+    and is responsible for returning an rdflib.Graph instance (a 'row graph');
+    thus generated subgraphs are then merged into a graph component.
+    """
 
     def __init__(self,
                  dataframe: pd.DataFrame,
@@ -240,15 +260,24 @@ class RowGraphConverter(_GraphConverter):
         return self._graph
 
 
-
-# maybe call this 'FieldGraphConverter' and also implement a 'RowGraphConverter' class
-class RuleGraphConverter(_GraphConverter):
-    # this docstring is trash -> todo
+class FieldGraphConverter(_GraphConverter):
     """Callable-based pandas.DataFrame to rdflib.Graph converter.
 
-    DFGraphConverter iterates over a dataframe and constructs RDF triples
-    by constructing a generator of subgraphs ('field graphs');
-    subgraphs are then merged into an rdflib.Graph component.
+    Iterates over a dataframe and applies a column_rule for every field.
+
+    For every field of every row, looks up and applies a callable in column_rules;
+    column_rules must be a mapping of column headers and callables of arity 3.
+
+    Every callable gets passed
+      1. the value of the current subject field
+         (specified in subject_column),
+      2. the value of the current field (the triple object) and
+      3. the store class-level attribute, a dictionary for state retention
+         (state can thus be shared between callables and also FieldGraphConverters).
+
+    Callables of column_rules are responsible for
+    returning an rdflib.Graph instance (a 'field graph');
+    thus generated subgraphs are then merged into a graph component.
     """
 
     store: dict = dict()
