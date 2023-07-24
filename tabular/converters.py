@@ -155,6 +155,8 @@ class TemplateConverter:
 
         return self.template[0].render(table_data)
 
+    # note: should this even be a a public method?
+    # maybe run this with a strategy="row" paramter from render?
     def render_by_row(self) -> Generator[str, None, None]:
         """Render jinja template(s) by row.
 
