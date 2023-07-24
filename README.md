@@ -4,6 +4,7 @@
 TabulaR - Functionality for DataFrame to RDF conversions.
 
 Note that although TabulaR was primarily designed for table to RDF conversions, the `TemplateConverter` class should be general enough to allow conversions to basically any target format.
+
 See e.g. the `TemplateXMLConverter` class. [todo]
 
 ## Requirements
