@@ -55,10 +55,10 @@ The template below on the other hand depends on external iteration:
 </book>
 ```
 
-Now `table_converter` uses the `table_template.j2` template and the `render` method,
-while `row_converter` uses the `row_template.j2` template and the `render_by_row` method.
+Now, while `table_converter` uses the `table_template.j2` template and the `render` method, 
+`row_converter` uses the `row_template.j2` template and the `render_by_row` method.
 
-Both converters yield the same results.
+Both converters yield the same result.
 
 ```python
 table = [
