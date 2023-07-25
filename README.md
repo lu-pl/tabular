@@ -56,7 +56,7 @@ This template on the other hand depends on external iteration:
 </book>
 ```
 
-Below `table_converter` uses the `table_template.j2` template and the `render` method and `row_converter` uses the `row_template.j2` template and the `render_by_row` method.
+Below, `table_converter` uses the `table_template.j2` template and the `render` method and `row_converter` uses the `row_template.j2` template and the `render_by_row` method.
 
 Both converters yield the same result.
 
