@@ -34,14 +34,14 @@ Here the table iteration is done in the template:
 ```jinja
 {# table_template.j2 #}
 
-{% for row in table_data -%}
+{% for row in table_data %}
 <book category="{{ row['category'] }}">
   <title>{{ row["title"] }}</title>
   <author>{{ row["author"] }}</author>
   <year>{{ row["year"] }}</year>
   <price>{{ row["price"] }}</price>
 </book>
-{%- endfor %}
+{% endfor %}
 ```
 
 This template on the other hand depends on external iteration:
