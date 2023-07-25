@@ -10,7 +10,7 @@ See for example the `TemplateXMLConverter` class. [todo]
 
 ## Requirements
 
-* python >= 3.10
+* python >= 3.11
 
 ## Usage
 TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
@@ -23,7 +23,7 @@ Two different render strategies are available through the `render` method and th
 
 - With the `render` method, every template gets passed the entire table data as "table_data"; 
   this means that iteration must be done in the template.
-- With the `render_by_row` method, for every row iteration the template gets passed the current row data only;
+- With the `render_by_row` method, for every row iteration the template gets passed the current row data (as "row_data") only;
   so iteration is done at the Python level, not in the template.
   
 #### Example
@@ -44,7 +44,7 @@ Here the table iteration is done in the template:
 {%- endfor %}
 ```
 
-The template below on the other hand depends on external iteration:
+This template on the other hand depends on external iteration:
 ```jinja
 {# row_template.j2 #}
 
@@ -56,19 +56,18 @@ The template below on the other hand depends on external iteration:
 </book>
 ```
 
-Now, while `table_converter` uses the `table_template.j2` template and the `render` method, 
-`row_converter` uses the `row_template.j2` template and the `render_by_row` method.
+Below `table_converter` uses the `table_template.j2` template and the `render` method and `row_converter` uses the `row_template.j2` template and the `render_by_row` method.
 
 Both converters yield the same result.
 
 ```python
 table = [
     {
-        'category': 'children',
-        'title': 'Harry Potter',
-        'author': 'J K. Rowling',
-        'year': 2005,
-        'price': 29.99
+        'category': 'programming',
+        'title': 'Fluent Python',
+        'author': 'Luciano Ramalho',
+        'year': 2022,
+        'price': 50.99
     },
     {
         'category': 'web',
@@ -97,10 +96,7 @@ row_converter = TemplateConverter(
 print(row_converter.render_by_row())
 ```
 
-> Warning: It is not yet possible to pass a string representing a path to the template parameter; this shall be implemented shortly.
-> For now the template parameter expects a `jinja2.Template` object.
-  
-Note that `TemplateConverter` produces plain *text* which in this case happens to be XML. A custom converter subclassing `TemplateConverter` can parse renderings into arbitrary object abstractions - see the `TemplateGraphConverter` class which parses renderings into an `rdflib.Graph` instance.
+Note that `TemplateConverter` produces *plain text* which in this case happens to be XML. A custom converter subclassing `TemplateConverter` can parse renderings into arbitrary object abstractions - see the `TemplateGraphConverter` class which parses renderings into an `rdflib.Graph` instance.
 
 ### Python/callable converters
 
