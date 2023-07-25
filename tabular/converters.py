@@ -4,6 +4,8 @@ Functionality for DataFrame to RDF Graph conversions.
 """
 
 import functools
+import os
+import pathlib
 
 from abc import ABC, abstractmethod
 from typing import (
@@ -19,11 +21,15 @@ from typing import (
 import pandas as pd
 from pandas.core.series import Series
 
-from jinja2.environment import Template
+from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 # from lxml.etree import XMLParser, _Element
 from rdflib import Graph, URIRef, Namespace
 
-from tabular.tabular_types import _RulesMapping, _RenderStrategy
+from tabular.tabular_types import (
+    _RulesMapping,
+    _RenderStrategy,
+    _TemplateReference
+)
 
 
 class _GraphConverter(ABC):
@@ -73,18 +79,52 @@ class TemplateConverter:
     def __init__(self,
                  *,
                  dataframe: pd.DataFrame,
-                 template: Template | Iterable[Template],
+                 template: _TemplateReference,
                  data: Optional[dict] = None
                  ) -> None:
         """Initialize a TemplateConverter."""
         self.dataframe = dataframe
         # I want kwargs only, so no *templates
-        self.template = (
-            template
-            if isinstance(template, Iterable)
-            else [template]
-        )
+        self.template = self._get_jinja_template(template)
         self.data = data or {}
+
+    def _get_jinja_template_from_path(self,
+                                      template_path: pathlib.Path
+                                      ) -> Template:
+        """Get a jinja2.Template from a pathlib.Path.
+
+        Creates a jinja2.Environment using a FileSystemLoader
+        and generates a jinja2.Template from that loader instance.
+
+        Helper for _get_jinja_template.
+        """
+        assert template_path.is_file(), (
+            TypeError(f"'{template_path}' is not a file.")
+        )
+
+        template_folder_path = template_path.parent.absolute()
+        template_file_name = template_path.name
+
+        environment = Environment(
+            loader=FileSystemLoader(template_folder_path),
+            autoescape=select_autoescape()
+        )
+
+        template = environment.get_template(template_file_name)
+
+        return template
+
+    def _get_jinja_template(self,
+                            template_reference: _TemplateReference
+                            ) -> Template:
+        """Get a jinja2.Template from a TemplateReference."""
+        if isinstance(template_reference, Template):
+            template = template_reference
+        else:
+            template_path = pathlib.Path(template_reference)
+            template = self._get_jinja_template_from_path(template_path)
+
+        return template
 
     # todo:
     @classmethod
