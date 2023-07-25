@@ -144,14 +144,13 @@ class TemplateConverter:
             in self.dataframe.iterrows()
         )
 
-    def _apply_template_to_row(self, row: Series) -> Generator[str, None, None]:
+    def _apply_template_to_row(self, row: Series) -> str:
         """Generate a dict from a Series and pass it to Template.render."""
         _row_dict = row.to_dict()
         _data = {"row_data": _row_dict}
         self.data.update(_data)
 
-        for template in self.template:
-            yield template.render(self.data)
+        return self.template.render(self.data)
 
     def _apply_template_to_dataframe(self,
                                      dataframe: Optional[pd.DataFrame] = None
@@ -164,7 +163,7 @@ class TemplateConverter:
         )
 
         for _, row in dataframe.iterrows():
-            yield from self._apply_template_to_row(row)
+            yield self._apply_template_to_row(row)
 
     def _apply_to_renderings(self,
                              call: Callable[[str], Any] = lambda x: x
@@ -187,13 +186,7 @@ class TemplateConverter:
         """
         table_data = {"table_data": self._get_table_data()}
 
-        if len(self.template) > 1:
-            return (
-                template.render(table_data)
-                for template in self.template
-            )
-
-        return self.template[0].render(table_data)
+        return self.template.render(table_data)
 
     # note: should this even be a a public method?
     # maybe run this with a strategy="row" paramter from render?
