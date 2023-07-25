@@ -1,9 +1,9 @@
 <bookstore>
-  <book category="children">
-    <title>Harry Potter</title>
-    <author>J K. Rowling</author>
-    <year>2005</year>
-    <price>29.99</price>
+  <book category="programming">
+    <title>Fluent Python</title>
+    <author>Luciano Ramalho</author>
+    <year>2022</year>
+    <price>50.99</price>
   </book>
   <book category="web">
     <title>Learning XML</title>
