@@ -54,43 +54,43 @@ def test_temlateconverter_books():
 
 ## todo
 
-# import pathlib
+import pathlib
 
-# import pandas as pd
-# from tabular import TemplateConverter
+import pandas as pd
+from tabular import TemplateConverter
 
-# table = [
-#     {
-#         'category': 'children',
-#         'title': 'Harry Potter',
-#         'author': 'J K. Rowling',
-#         'year': 2005,
-#         'price': 29.99
-#     },
-#     {
-#         'category': 'web',
-#         'title': 'Learning XML',
-#         'author': 'Erik T. Ray',
-#         'year': 2003,
-#         'price': 39.95
-#     }
-# ]
+table = [
+    {
+        'category': 'programming',
+        'title': 'Fluent Python',
+        'author': 'Luciano Ramalho',
+        'year': 2022,
+        'price': 50.99
+    },
+    {
+        'category': 'web',
+        'title': 'Learning XML',
+        'author': 'Erik T. Ray',
+        'year': 2003,
+        'price': 39.95
+    }
+]
 
-# df = pd.DataFrame(data=table)
+df = pd.DataFrame(data=table)
 
-# templates_path = pathlib.Path("/home/upgrd/projects/python-projects/tabular/tests/data/templates/")
+templates_path = pathlib.Path("/home/upgrd/projects/python-projects/tabular/tests/data/templates/")
 
-# table_converter = TemplateConverter(
-#     dataframe=df,
-#     # template="./tests/data/templates/table_template.j2"
-#     template = templates_path / "table_template.j2"
-# )
+table_converter = TemplateConverter(
+    dataframe=df,
+    # template="./tests/data/templates/table_template.j2"
+    template = templates_path / "table_template.j2"
+)
 
 # print(table_converter.render())
 
-# row_converter = TemplateConverter(
-#     dataframe=df,
-#     template="./row_converter.j2"
-# )
+row_converter = TemplateConverter(
+    dataframe=df,
+    template= templates_path / "row_template.j2"
+)
 
-# print(row_converter.render_by_row())
+# print("".join(row_converter.render_by_row()))
