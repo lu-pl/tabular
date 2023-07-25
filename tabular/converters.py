@@ -4,7 +4,6 @@ Functionality for DataFrame to RDF Graph conversions.
 """
 
 import functools
-import os
 import pathlib
 
 from abc import ABC, abstractmethod
@@ -13,7 +12,6 @@ from typing import (
     Callable,
     Generator,
     Iterable,
-    Literal,
     Optional,
     Self,
 )
