@@ -101,7 +101,7 @@ Note that `TemplateConverter` produces *plain text* which in this case happens t
 > Obviously valid XML requires a root element; while it is easy to generate valid XML with the "table" render strategy (using the `render` method), the root element must be added externally (e.g. by passing the converter renderings to another template containing the root node or by embedding the `render_by_row` generator in another Iterable) if the "row" render strategy (using the `render_by_row` method) is used.
 
 ### Python/callable converters
-
+[todo]
 
 ## Contribution
 
