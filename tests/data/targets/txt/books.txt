@@ -1,0 +1,11 @@
+category: programming
+title: Fluent Python
+author: Luciano Ramalho
+year: 2022
+price: 50.99
+
+category: web
+title: Learning XML
+author: Erik T. Ray
+year: 2003
+price: 39.95

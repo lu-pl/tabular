@@ -86,9 +86,8 @@ class TemplateConverter:
         self.template = self._get_jinja_template(template)
         self.data = data or {}
 
-    def _get_jinja_template_from_path(self,
-                                      template_path: pathlib.Path
-                                      ) -> Template:
+    @staticmethod
+    def _get_jinja_template_from_path(template_path: pathlib.Path) -> Template:
         """Get a jinja2.Template from a pathlib.Path.
 
         Creates a jinja2.Environment using a FileSystemLoader

@@ -1,96 +1,125 @@
 """Pytest entry point for TemplateConverter tests."""
 
-# from tabular import TemplateConverter
+import os
+import pandas as pd
+import pathlib
 
-# from tests.data import (
-#     bookstore_df,
-#     bookstore_target,
-#     bookstore_template,
-#     books_row_template,
-#     books_table_template
-# )
+from jinja2 import Template, Environment, FileSystemLoader, select_autoescape
 
-
-# def test_templateconverter_bookstore():
-#     """Test for the TemplateConverter class.
-
-#     Generates a rendering and compares it to target content.
-#     """
-#     bookstore_template_converter = TemplateConverter(
-#         dataframe=bookstore_df,
-#         template=bookstore_template
-#     )
-
-#     bookstore_table = bookstore_template_converter.render()
-
-#     # minor rstrip cheat..
-#     assert bookstore_table == bookstore_target.rstrip()
+from tabular import TemplateConverter
+from tests.data import (
+    templates_path,
+    targets_graphs_path,
+    targets_xml_path,
+    targets_txt_path,
+    tables
+)
 
 
-# def test_temlateconverter_books():
-#     """Test for the TemplateConverter class.
+def test_template_converter_str_input():
+    """TemplateConverter test.
 
-#     Generates and compares renderings from render and render_by_row.
-#     """
-#     books_row_template_converter = TemplateConverter(
-#         dataframe=bookstore_df,
-#         template=books_row_template
-#     )
+    Instantiate template parameter with string input
+    and compare rendering against target.
+    """
+    template = str(templates_path / "books.j2")
+    assert isinstance(template, str)
 
-#     books_table_template_converter = TemplateConverter(
-#         dataframe=bookstore_df,
-#         template=books_table_template
-#     )
+    converter = TemplateConverter(
+        dataframe=tables.bookstore_df,
+        template=template
+    )
 
-#     books_row = "".join(books_row_template_converter.render_by_row())
-#     # note: whitespace stripped from template: https://stackoverflow.com/a/36871283/6455731
-#     books_table = books_table_template_converter.render()
+    with open(targets_txt_path / "books.txt") as f:
+        target = f.read()
 
-#     assert books_row == books_table
+    rendering = converter.render()
+
+    # minor slicing cheat..
+    assert rendering[1:] == target
 
 
+def test_template_converter_template_input():
+    """TemplateConverter test.
 
-##################################################
+    Instantiate template parameter with jinja.Template input
+    and compare rendering against target.
+    """
+    posix_path = templates_path._paths[0]
+    assert isinstance(posix_path,  pathlib.Path)
 
-## todo
+    environment = Environment(
+        loader=FileSystemLoader(posix_path),
+        autoescape=select_autoescape()
+    )
 
-# import pathlib
+    template = environment.get_template("books.j2")
 
-# import pandas as pd
-# from tabular import TemplateConverter
+    converter = TemplateConverter(
+        dataframe=tables.bookstore_df,
+        template=template
+    )
 
-# table = [
-#     {
-#         'category': 'programming',
-#         'title': 'Fluent Python',
-#         'author': 'Luciano Ramalho',
-#         'year': 2022,
-#         'price': 50.99
-#     },
-#     {
-#         'category': 'web',
-#         'title': 'Learning XML',
-#         'author': 'Erik T. Ray',
-#         'year': 2003,
-#         'price': 39.95
-#     }
-# ]
+    with open(targets_txt_path / "books.txt") as f:
+        target = f.read()
 
-# df = pd.DataFrame(data=table)
+    rendering = converter.render()
 
-# templates_path = pathlib.Path("/home/upgrd/projects/python-projects/tabular/tests/data/templates/")
+    # minor slicing cheat..
+    assert rendering[1:] == target
 
-# table_converter = TemplateConverter(
-#     dataframe=df,
-#     # template="./tests/data/templates/table_template.j2"
-#     template = templates_path / "table_template.j2"
-# )
 
-# # print(table_converter.render())
+def test_template_converter_path_input():
+    """TemplateConverter test.
 
-# row_converter = TemplateConverter(
-#     dataframe=df,
-#     template= templates_path / "row_template.j2"
-# )
+    Instantiate template parameter with pathlib.Path input
+    and compare rendering against target.
+    """
+    template = templates_path / "books.j2"
+    assert isinstance(template, os.PathLike)
 
-# # print("".join(row_converter.render_by_row()))
+    converter = TemplateConverter(
+        dataframe=tables.bookstore_df,
+        template=template
+    )
+
+    with open(targets_txt_path / "books.txt") as f:
+        target = f.read()
+
+    rendering = converter.render()
+
+    # minor slicing cheat..
+    assert rendering[1:] == target
+
+
+def test_get_jinja_template_from_path():
+    """Test for TemplateConverter._get_jinja_template_from_path."""
+    path = templates_path / "books.j2"
+    template = TemplateConverter._get_jinja_template_from_path(path)
+
+    assert isinstance(template, Template)
+
+def test_get_jinja_template():
+    """Test for TemplateConverter._get_jinja_template."""
+    template = templates_path / "books.j2"
+
+    converter = TemplateConverter(
+        dataframe=tables.bookstore_df,
+        template=template
+    )
+
+
+    posix_path = templates_path._paths[0]
+
+    environment = Environment(
+        loader=FileSystemLoader(posix_path),
+        autoescape=select_autoescape()
+    )
+
+    input_str = str(template)
+    input_pathlike = template
+    input_template = environment.get_template("books.j2")
+
+    assert isinstance(converter._get_jinja_template(input_str), Template)
+    assert isinstance(converter._get_jinja_template(input_pathlike), Template)
+    assert isinstance(converter._get_jinja_template(input_template), Template)
