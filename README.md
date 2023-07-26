@@ -93,7 +93,7 @@ row_converter = TemplateConverter(
     template="./row_template.j2"
 )
 
-print(row_converter.render_by_row())
+print("".join(row_converter.render_by_row()))
 ```
 
 Note that `TemplateConverter` produces *plain text* which in this case happens to be XML. A custom converter subclassing `TemplateConverter` can parse renderings into arbitrary object abstractions - see the `TemplateGraphConverter` class which parses renderings into an `rdflib.Graph` instance.
