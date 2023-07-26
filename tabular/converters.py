@@ -174,7 +174,7 @@ class TemplateConverter:
             call(rendering)
 
     def render(self) -> str | Generator[str, None, None]:
-        """Render jinja template(s).
+        """Render a jinja template.
 
         Every template gets passed the entire table data;
         so iteration must be done in the template.
@@ -188,7 +188,7 @@ class TemplateConverter:
     # note: should this even be a a public method?
     # maybe run this with a strategy="row" paramter from render?
     def render_by_row(self) -> Generator[str, None, None]:
-        """Render jinja template(s) by row.
+        """Render a jinja template by row.
 
         For every row iteration the template gets passed the current row data only;
         so iteration is done at the Python level, not in the template.
