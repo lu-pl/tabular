@@ -6,7 +6,11 @@ from typing import Any
 
 import click
 
-from cli_utils.click_custom import RequiredIf, RequiredMultiOptions
+from cli_utils.click_custom import (
+    RequiredIf,
+    RequiredMultiOptions,
+    DefaultCommandGroup
+)
 
 
 _ClickPath = click.Path(
@@ -19,12 +23,13 @@ _ClickPath = click.Path(
 )
 
 
-@click.group()
+@click.group(cls=DefaultCommandGroup)
 def tabular_cli():
+    """..."""
     pass
 
 
-@tabular_cli.command()
+@tabular_cli.command(default_command=True)
 @click.argument("table_file",
                 type=_ClickPath)
 @click.argument("template_file",
@@ -40,7 +45,7 @@ def tabular_cli():
 @click.option("--render-by-row",
               type=bool,
               default=False)
-def text(table_file: pathlib.Path,
+def _default(table_file: pathlib.Path,
          template_file: pathlib.Path,
          column: str,
          rows: tuple[Any, ...],
