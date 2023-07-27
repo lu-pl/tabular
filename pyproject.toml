@@ -13,6 +13,7 @@ rdflib = "^6.3.2"
 lodkit = "^0.1.1"
 lxml = "^4.9.3"
 openpyxl = "^3.1.2"
+click = "^8.1.6"
 
 
 [tool.poetry.group.dev.dependencies]
