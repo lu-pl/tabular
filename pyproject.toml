@@ -13,7 +13,6 @@ rdflib = "^6.3.2"
 lodkit = "^0.1.1"
 lxml = "^4.9.3"
 openpyxl = "^3.1.2"
-typer = {extras = ["all"], version = "^0.9.0"}
 
 
 [tool.poetry.group.dev.dependencies]
