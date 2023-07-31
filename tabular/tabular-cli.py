@@ -6,7 +6,7 @@ from typing import Any
 
 import click
 
-from cli_utils.click_custom import (
+from cli.click_custom import (
     RequiredIf,
     RequiredMultiOptions,
     DefaultCommandGroup
