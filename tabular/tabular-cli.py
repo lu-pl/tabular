@@ -64,7 +64,7 @@ def noparse(table: pathlib.Path,
     # 1. get a dataframe
     # 1.2. optional: partition a dataframe
 
-    # 2. get a Converter
+    # 2. get a TemplateConverter
 
     # 3. render according to strategy (table or row)
     click.echo((table, template, column, rows, render_by_row))
@@ -81,6 +81,12 @@ def graph(table: pathlib.Path,
           rows: tuple[Any, ...],
           format: _GraphFormatOptions):
     """..."""
+    # 1. get a dataframe
+    # 1.2. optional: partition a dataframe
+
+    # 2. get a Converter
+
+    # 3. serialize from rdflib.Graph instance according to format
     click.echo((table, template, column, rows, format))
 
 

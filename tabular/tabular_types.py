@@ -34,7 +34,7 @@ _ClickPath = click.Path(
     path_type=pathlib.Path
 )
 
-rdflib_graph_format_options: str = [
+rdflib_graph_format_options = [
     plugin.name for plugin
     in plugins()
     if plugin.kind == Serializer
