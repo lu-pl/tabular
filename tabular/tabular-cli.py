@@ -2,7 +2,7 @@
 
 import pathlib
 
-from typing import Any
+from typing import Any, Callable
 
 import click
 
@@ -12,89 +12,76 @@ from cli.click_custom import (
     DefaultCommandGroup
 )
 
+from tabular_types import (
+    _ClickPath,
+    _GraphFormatOptions,
+    _GraphFormatOptionsChoice
+    )
 
-_ClickPath = click.Path(
-    exists=True,
-    file_okay=True,
-    dir_okay=False,
-    readable=True,
-    resolve_path=True,
-    path_type=pathlib.Path
-)
+
+_common_options = [
+    click.argument("table",
+                   type=_ClickPath),
+    click.argument("template",
+                   type=_ClickPath),
+    click.option("-c", "--column",
+                 cls=RequiredIf,
+                 required_if="rows"),
+    click.option("-r", "--rows",
+                 cls=RequiredMultiOptions,
+                 required_if="column")
+]
+
+
+def common_options(f: Callable) -> Callable:
+    """Stacks click.arguments/click.options in a single place.
+
+    Used as an aggegrate for shared subcommand options.
+    """
+    for option in _common_options:
+        f = option(f)
+    return f
 
 
 @click.group(cls=DefaultCommandGroup)
 def tabular_cli():
-    """..."""
+    """Actual CLI Docs."""
     pass
 
 
-@tabular_cli.command(default_command=True)
-@click.argument("table_file",
-                type=_ClickPath)
-@click.argument("template_file",
-                type=_ClickPath)
-@click.option("-c", "--column",
-              type=str,
-              cls=RequiredIf,
-              required_if="rows")
-@click.option("-r", "--rows",
-              type=tuple,
-              cls=RequiredMultiOptions,
-              required_if="column")
+@tabular_cli.command()
+@common_options
 @click.option("--render-by-row",
               type=bool,
-              default=False)
-def _default(table_file: pathlib.Path,
-         template_file: pathlib.Path,
-         column: str,
-         rows: tuple[Any, ...],
-         render_by_row):
+              default=False,
+              is_flag=True)
+def noparse(table: pathlib.Path,
+            template: pathlib.Path,
+            column: str,
+            rows: tuple[Any, ...],
+            render_by_row):
     """..."""
     # 1. get a dataframe
-    # optional: partition a dataframe
+    # 1.2. optional: partition a dataframe
 
     # 2. get a Converter
 
     # 3. render according to strategy (table or row)
-
-    print(table_file)
-    print(template_file)
-    print(type(table_file))
-    print(type(template_file))
-    print()
-    print(column)
-    print(rows)
+    click.echo((table, template, column, rows, render_by_row))
 
 
 @tabular_cli.command()
-@click.argument("table_file",
-                type=_ClickPath)
-@click.argument("template_file",
-                type=_ClickPath)
-@click.option("-c", "--column",
-              type=str,
-              cls=RequiredIf,
-              required_if="rows")
-@click.option("-r", "--rows",
-              type=tuple,
-              cls=RequiredMultiOptions,
-              required_if="column")
+@common_options
 @click.option("-f", "--format",
-              type=str,
+              type=_GraphFormatOptionsChoice,
               default="ttl")
-def graph(table_file: pathlib.Path,
-          template_file: pathlib.Path,
+def graph(table: pathlib.Path,
+          template: pathlib.Path,
           column: str,
           rows: tuple[Any, ...],
-          format):
+          format: _GraphFormatOptions):
     """..."""
-    print(table_file)
-    print(template_file)
-    print()
-    print(column)
-    print(rows)
-    print(format)
+    click.echo((table, template, column, rows, format))
 
 
 if __name__ == "__main__":
