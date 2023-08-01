@@ -12,7 +12,7 @@ from tabular.tabular_types import (
     _ClickPath,
     _GraphFormatOptions,
     _GraphFormatOptionsChoice
-    )
+)
 
 from tabular.cli.click_custom import (
     RequiredIf,
@@ -20,6 +20,8 @@ from tabular.cli.click_custom import (
     DefaultCommandGroup
 )
 from tabular.cli.converter_setup import initialize_converter
+from tabular.cli.docs import docs
+
 
 _common_options = [
     click.argument("table",
@@ -28,10 +30,12 @@ _common_options = [
                    type=_ClickPath),
     click.option("-c", "--column",
                  cls=RequiredIf,
-                 required_if="rows"),
+                 required_if="rows",
+                 help=docs.column),
     click.option("-r", "--rows",
                  cls=RequiredMultiOptions,
-                 required_if="column")
+                 required_if="column",
+                 help=docs.rows)
 ]
 
 
@@ -60,13 +64,19 @@ def tabular_cli():
 @click.option("--render-by-row",
               type=bool,
               default=False,
-              is_flag=True)
+              is_flag=True,
+              help=docs.render_by_row)
 def noparse(table: pathlib.Path,
             template: pathlib.Path,
             column: str,
             rows: tuple[Any, ...],
             render_by_row):
-    """Generate Jinja2 renderings without any parsing."""
+    """Generate Jinja2 renderings without prior parsing.
+
+    \b
+    TABLE: A file holding tabular data, e.g. an Excel or csv file.
+    TEMPLATE: A Jinja2 template file.
+    """
     # get converter
     converter = initialize_converter(
         converter_type=TemplateConverter,
@@ -74,7 +84,7 @@ def noparse(table: pathlib.Path,
         template=template,
         column=column,
         rows=rows
-        )
+    )
 
     # render according to strategy (table or row)
     if render_by_row:
@@ -87,13 +97,19 @@ def noparse(table: pathlib.Path,
 @common_options
 @click.option("-f", "--format",
               type=_GraphFormatOptionsChoice,
-              default="ttl")
+              default="ttl",
+              help=docs.format)
 def graph(table: pathlib.Path,
           template: pathlib.Path,
           column: str,
           rows: tuple[Any, ...],
           format: _GraphFormatOptions):
-    """Generate and parse Jinja2 renderings into an rdflib.Graph."""
+    """Generate and parse Jinja2 renderings into an rdflib.Graph.
+
+    \b
+    TABLE: A file holding tabular data, e.g. an Excel or csv file.
+    TEMPLATE: A Jinja2 template file.
+    """
     # get converter
     converter = initialize_converter(
         converter_type=TemplateGraphConverter,
@@ -101,7 +117,7 @@ def graph(table: pathlib.Path,
         template=template,
         column=column,
         rows=rows
-        )
+    )
 
     # serialize from rdflib.Graph instance according to format
     click.echo(converter.serialize(format=format))
