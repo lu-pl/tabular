@@ -1,11 +1,20 @@
 """DataFrame utilites for the TabulaR CLI."""
 
 import inspect
+import logging
 import pathlib
 
 from typing import Callable, Generator, Iterable, Mapping
+from types import FunctionType
 
 import pandas as pd
+
+
+# call basicConfig manually to create handlers
+logging.basicConfig()
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.CRITICAL)
 
 
 EXTENSION_READ_METHODS: Mapping[tuple, Callable] = {
@@ -34,7 +43,9 @@ def _get_read_method_by_extension(extension: str,
     raise UnknownExtensionError(f"Unknown extension '{extension}'.")
 
 
-def _get_pandas_read_methods() -> dict[str, Callable]:
+# FunctionType vs. Callable:
+# actually dict+FunctionType is more precise here than e.g. Mapping+Callable
+def _get_pandas_read_methods() -> dict[str, FunctionType]:
     """Get all pandas methods starting with 'read_'.
 
     For every match a mapping of method name and function object is returned.
@@ -49,8 +60,6 @@ def _get_pandas_read_methods() -> dict[str, Callable]:
     return pandas_read_methods
 
 
-# this needs thorough logging
-# refactor: this should be called _get_read_method_by/from<...>
 def _get_dataframe_try_hard(file: pathlib.Path) -> pd.DataFrame:
     """Try hard to get a dataframe from a pathlib.Path.
 
@@ -59,13 +68,16 @@ def _get_dataframe_try_hard(file: pathlib.Path) -> pd.DataFrame:
     """
     for read_method in _get_pandas_read_methods().values():
         try:
+            logger.info(f"Trying '{read_method.__name__}' to obtain dataframe from {file.name}.")
             dataframe = read_method(file)
-            # maybe return read_method instead? probably!
-            # todo: this + reflect change in get_dataframe_from_file
+
+            logger.info(f"Successfully obtained dataframe with '{read_method.__name__}'.")
             return dataframe
-        except Exception:
+        except Exception as e:
+            logger.warning(f"Unable to obtain dataframe with '{read_method.__name__}': {e}")
             pass
 
+    logging.critical("Unable to obtain dataframe. Exiting.")
     raise Exception("Could not find applicable read method.")
 
 
@@ -77,8 +89,6 @@ def get_dataframe_from_file(file: pathlib.Path):
     after another and going with the first that applies.
     """
     # note: if the extension mapping fails, there must extensive logging!
-    ...
-
     extension = file.suffix.lstrip(".")
 
     try:
@@ -86,6 +96,8 @@ def get_dataframe_from_file(file: pathlib.Path):
         dataframe = read_method(file)
     except UnknownExtensionError:
         # try harder
+        logger.info(f"No known pandas read method for '{extension}'.\n"
+                    "Trying to determine read method by trial.")
         dataframe = _get_dataframe_try_hard(file)
 
     return dataframe
@@ -100,9 +112,13 @@ def partition_dataframe(dataframe: pd.DataFrame,
     A partition is defined by a column reference
     and a set of 1+ row reference(s).
     """
-    # why is this needed again?
+
     def _rows(rows: Iterable) -> Generator:
-        """String/integer handling kludge."""
+        """Handle str/integers CLI input.
+
+        This is needed for weakly typed CLI arguments and
+        because --rows needs to take any type.
+        """
         for value in rows:
             try:
                 value = int(value)
