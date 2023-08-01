@@ -33,7 +33,7 @@ docs = CLIDocs(
     ),
 
     format=(
-        "Specifies a format for RDF serialization.\n"
+        "Specifies a format for RDF serialization. "
         "This is a proxy for rdflib.Graph serialize."
     )
 )
