@@ -50,7 +50,7 @@ def common_options(f: Callable) -> Callable:
 
 
 @click.group(cls=DefaultCommandGroup)
-def tabular_cli():
+def tabular_cli():  # noqa: D403
     """TabulaR CLI.
 
     Command-line interface for converting tabular data
@@ -71,7 +71,7 @@ def noparse(table: pathlib.Path,
             column: str,
             rows: tuple[Any, ...],
             render_by_row):
-    """Generate Jinja2 renderings without prior parsing.
+    r"""Generate Jinja2 renderings without prior parsing.
 
     \b
     TABLE: A file holding tabular data, e.g. an Excel or csv file.
@@ -103,8 +103,9 @@ def graph(table: pathlib.Path,
           template: pathlib.Path,
           column: str,
           rows: tuple[Any, ...],
+          # https://mypy.readthedocs.io/en/stable/common_issues.html#variables-vs-type-aliases
           format: _GraphFormatOptions):
-    """Generate and parse Jinja2 renderings into an rdflib.Graph.
+    r"""Generate and parse Jinja2 renderings into an rdflib.Graph.
 
     \b
     TABLE: A file holding tabular data, e.g. an Excel or csv file.
