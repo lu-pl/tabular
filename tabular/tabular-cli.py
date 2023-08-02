@@ -45,8 +45,10 @@ def common_options(f: Callable) -> Callable:
     """Stacks click.arguments/click.options in a single place.
 
     Used as an aggegrate for shared subcommand options.
+    Note: it is of utmost importance to reverse the argument/options iterable;
+    else arguments succession will be inverted!
     """
-    for option in _common_options:
+    for option in reversed(_common_options):
         f = option(f)
     return f
 
@@ -113,17 +115,11 @@ def graph(table: pathlib.Path,
     TABLE: A file holding tabular data, e.g. an Excel or csv file.
     TEMPLATE: A Jinja2 template file.
     """
-    print(f"TABLE: {table}")
-    print(f"TEMPLATE: {template}")
-    print(type(rows))
-
     # get converter
     converter = initialize_converter(
         converter_type=TemplateGraphConverter,
-        # table=table,
-        # template=template,
-        table=template,
-        template=table,
+        table=table,
+        template=template,
         column=column,
         rows=rows
     )
