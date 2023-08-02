@@ -75,7 +75,7 @@ def noparse(table: pathlib.Path,
             column: str,
             rows: tuple[Any, ...],
             render_by_row):
-    r"""Generate Jinja2 renderings without prior parsing.
+    """Generate Jinja2 renderings without prior parsing.
 
     \b
     TABLE: A file holding tabular data, e.g. an Excel or csv file.
@@ -109,7 +109,7 @@ def graph(table: pathlib.Path,
           rows: tuple[Any, ...],
           # https://mypy.readthedocs.io/en/stable/common_issues.html#variables-vs-type-aliases
           format: _GraphFormatOptions):
-    r"""Generate and parse Jinja2 renderings into an rdflib.Graph.
+    """Generate and parse Jinja2 renderings into an rdflib.Graph.
 
     \b
     TABLE: A file holding tabular data, e.g. an Excel or csv file.

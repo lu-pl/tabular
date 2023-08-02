@@ -23,6 +23,7 @@ docs = CLIDocs(
 
     rows=(
         "Specifies a row by name for partitioning. "
+        "This flag takes an arbitrary number of arguments (internally a TUPLE). "
         "Partitions are defined by a column and the row(s) the partition shall contain. "
         "--rows is mandatory if --column is given and vice versa."
     ),
