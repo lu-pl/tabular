@@ -1,7 +1,5 @@
 """Pytest entry point for RowGraphConverter tests."""
 
-from itertools import count
-
 from tabular import RowGraphConverter
 
 from rdflib import Graph, Literal, URIRef, Namespace
@@ -18,12 +16,6 @@ CRM = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
 CRMCLS = Namespace("https://clscor.io/ontologies/CRMcls/")
 
 
-# this should be in a helper/utils module
-def counter(cnt=count()):
-    "Wrapper for itertools.count."
-    return next(cnt)
-
-
 def row_raph_converter_rule(row_dict: dict) -> Graph():
     """row_rule for building a row graph.
 
@@ -34,12 +26,9 @@ def row_raph_converter_rule(row_dict: dict) -> Graph():
     corpus_acronym_lower = row_dict["corpusAcronym"].lower()
     corpus_name = row_dict["corpusName"]
 
-    counter1 = counter()
-    counter2 = counter()
-
     corpus_uri = URIRef(f"https://{corpus_acronym_lower}.clscor.io/entity/corpus")
-    appellation_0 = URIRef(f"https://{corpus_acronym_lower}.clscor.io/entity/appellation/{counter1}")
-    appellation_1 = URIRef(f"https://{corpus_acronym_lower}.clscor.io/entity/appellation/{counter2}")
+    appellation_1 = URIRef(f"https://{corpus_acronym_lower}.clscor.io/entity/appellation/1")
+    appellation_2 = URIRef(f"https://{corpus_acronym_lower}.clscor.io/entity/appellation/2")
 
     triples = [
         (
@@ -50,46 +39,46 @@ def row_raph_converter_rule(row_dict: dict) -> Graph():
         (
             corpus_uri,
             CRM["P1_is_identified_by"],
-            appellation_0
+            appellation_1
         ),
         (
             corpus_uri,
             CRM["P1_is_identified_by"],
-            appellation_1
+            appellation_2
         ),
 
         (
-            appellation_0,
+            appellation_1,
             RDF.type,
             CRM["E41_Appellation"]
         ),
         (
-            appellation_0,
+            appellation_1,
             CRM["P2_has_type"],
             URIRef(
                 "https://core.clscor.io/entity/type/appellation_type/full_title"
             )
         ),
         (
-            appellation_0,
+            appellation_1,
             RDF.value,
             Literal(corpus_name)
         ),
 
         (
-            appellation_1,
+            appellation_2,
             RDF.type,
             CRM["E41_Appellation"]
         ),
         (
-            appellation_1,
+            appellation_2,
             CRM["P2_has_type"],
             URIRef(
                 "https://core.clscor.io/entity/type/appellation_type/acronym"
             )
         ),
         (
-            appellation_1,
+            appellation_2,
             RDF.value,
             Literal(corpus_acronym)
         ),

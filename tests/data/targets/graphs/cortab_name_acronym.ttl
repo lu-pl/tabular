@@ -3,25 +3,25 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <https://rem.clscor.io/entity/corpus> a crmcls:X1_Corpus ;
-    crm:P1_is_identified_by <https://rem.clscor.io/entity/appellation/0>,
-        <https://rem.clscor.io/entity/appellation/1> .
+    crm:P1_is_identified_by <https://rem.clscor.io/entity/appellation/1>,
+        <https://rem.clscor.io/entity/appellation/2> .
 
 <https://swedracor.clscor.io/entity/corpus> a crmcls:X1_Corpus ;
-    crm:P1_is_identified_by <https://swedracor.clscor.io/entity/appellation/2>,
-        <https://swedracor.clscor.io/entity/appellation/3> .
+    crm:P1_is_identified_by <https://swedracor.clscor.io/entity/appellation/1>,
+    <https://swedracor.clscor.io/entity/appellation/2> .
 
-<https://rem.clscor.io/entity/appellation/0> a crm:E41_Appellation ;
+<https://rem.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
     crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
     rdf:value "Reference corpus Middle High German" .
 
-<https://rem.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
+<https://rem.clscor.io/entity/appellation/2> a crm:E41_Appellation ;
     crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/acronym> ;
     rdf:value "ReM" .
 
-<https://swedracor.clscor.io/entity/appellation/2> a crm:E41_Appellation ;
+<https://swedracor.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
     crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
     rdf:value "Swedish Drama Corpus" .
 
-<https://swedracor.clscor.io/entity/appellation/3> a crm:E41_Appellation ;
+<https://swedracor.clscor.io/entity/appellation/2> a crm:E41_Appellation ;
     crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/acronym> ;
     rdf:value "SweDraCor" .
