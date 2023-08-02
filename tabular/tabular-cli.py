@@ -29,10 +29,12 @@ _common_options = [
     click.argument("template",
                    type=_ClickPath),
     click.option("-c", "--column",
+                 type=str,
                  cls=RequiredIf,
                  required_if="rows",
                  help=docs.column),
     click.option("-r", "--rows",
+                 type=tuple,
                  cls=RequiredMultiOptions,
                  required_if="column",
                  help=docs.rows)
@@ -111,11 +113,17 @@ def graph(table: pathlib.Path,
     TABLE: A file holding tabular data, e.g. an Excel or csv file.
     TEMPLATE: A Jinja2 template file.
     """
+    print(f"TABLE: {table}")
+    print(f"TEMPLATE: {template}")
+    print(type(rows))
+
     # get converter
     converter = initialize_converter(
         converter_type=TemplateGraphConverter,
-        table=table,
-        template=template,
+        # table=table,
+        # template=template,
+        table=template,
+        template=table,
         column=column,
         rows=rows
     )
