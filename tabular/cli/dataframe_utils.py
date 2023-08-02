@@ -116,8 +116,7 @@ def partition_dataframe(dataframe: pd.DataFrame,
     def _rows(rows: Iterable) -> Generator:
         """Handle str/integers CLI input.
 
-        This is needed for weakly typed CLI arguments and
-        because --rows needs to take any type.
+        This is needed because --rows must take any type.
         """
         for value in rows:
             try:
