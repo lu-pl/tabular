@@ -1,0 +1,403 @@
+id,corpusName,corpusAcronym,corpusAcronym_comments,corpusLink,corpusLanguage,corpusLanguage_comments,corpusTextCount,"corpusTextCount 
+(=Docs in Corpus)_comments",corpusWordCount,"corpusWordCount 
+(words in corpus)_comments
+[Vera Maria Charvat:
+actually: We did not differentiate between words (sometimes not clear if duplicates are included or not) and tokens (all words, including duplicates)]",corpusTimespan,corpusTimespan_comments,corpusFormat/Schema,corpusFormat/Schema_consolidatedVocab,corpusFormat/Schema_comments,corpusAnnotation,corpusAnnotation_comments,corpusLiteraryGenre,corpusLiteraryGenre_consolidatedVocab,corpusLiteraryGenre_comments,corpusType,corpusType_consolidatedVocab,corpusAPI,corpusAPI_comments,corpusLicence,corpusLicence_link,corpusLicence_comments,corpusReview,additionalLink,additionalLink_comments,additionalInfo / commentary,sourceOfInformation,editor/contributor
+1,Drama Corpora Project,DraCor ,,https://dracor.org/ ,"Alsatian, Bashkir, French, German, Greek, Italian, Roman, Russian, Spanish, Swedish, Tatar",,NaN,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,"Vera Maria Charvat:
+Unless otherwise stated, all corpora and the web design
+are released under Creative Commons 0 1.0",NaN,https://github.com/dracor-org,,"Commentary: This is the overall-page starting page with links to the individual drama corpora, which are listed in the following lines of this table (Alsatian, Bashkir, Calderón, French, German, German Shakespeare, Greek, Italian, Roman, Russian, Shakespeare, Spanish, Swedish, Tatar); Dracor provides very sophisticated info, a lot of valuable information can be scraped via the API",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+2,Alsatian Drama Corpus,AlsDraCor,,https://dracor.org/als,Alsatian,,25,,NaN,,19th and 20th century,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/alsdracor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+3,Bashkir Drama Corpus,BashDraCor,,https://dracor.org/bash,Bashkir,,3,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,NaN,,"Vera Maria Charvat:
+Works still under copyright published with the permission of the rights holders
+",NaN,NaN,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+4,Calderón corpus,CalDraCor,,https://dracor.org/cal,Spanish,,201,"Charvat, Vera Maria:
+[proposal: 54], [homepage: 201]",NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/caldracor,,"Proposal: ""Calderón corpus (54 plays)""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+5,French Drama Corpus,FreDraCor,,https://dracor.org/fre,French,,1560,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC BY-NC-SA 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-nc-sa-4-0,,NaN,https://github.com/dracor-org/fredracor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+6,German Drama Corpus,GerDraCor,,https://dracor.org/ger,German,,569,"Charvat, Vera Maria:
+[proposal: 481], [homepage: 569]",NaN,,1650s–1940s,"Charvat, Vera Maria:
+[proposal: 1730s–1940s], [homepage: 1650s to the 1940s] ",TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/gerdracor,,"Proposal: ""German Drama Corpus: 481 German-language plays from 1730s–1940s""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+7,German Shakespeare Drama Corpus,GershDraCor,,https://dracor.org/gersh,German,,37,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/gershdracor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+8,Greek Drama Corpus,GreekDraCor,,https://dracor.org/greek,Greek,,39,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC BY-SA 3.0 US,,,NaN,https://github.com/dracor-org/greekdracor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+9,Italian Drama Corpus,ItaDraCor,,https://dracor.org/ita,Italian,,139,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/itadracor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+10,Roman Drama Corpus,RomDraCor,,https://dracor.org/rom,Latin,,36,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC BY-SA 3.0 US,,,NaN,https://github.com/dracor-org/romdracor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+11,Russian Drama Corpus,RusDraCor,,https://dracor.org/rus ,Russian,,212,"Charvat, Vera Maria:
+[proposal: 210], [homepage: 212]",NaN,,1740s–1940s ,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/rusdracor,,"Proposal: ""Russian Drama Corpus: 210 Russian-language plays from 1740s–1940s""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+12,Shakespeare Drama Corpus,ShakeDraCor,,https://dracor.org/shake,English,,37,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC BY-NC 3.0,,,NaN,https://github.com/dracor-org/shakedracor,,"Homepage: ""derived from the Folger Shakespeare Library""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+13,Spanish Drama Corpus,SpanDraCor,,https://dracor.org/span,Spanish,,25,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,NaN,,"Homepage: ""Forked from the BETTE corpus (Biblioteca Electrónica Textual del Teatro en Español de 1868–1936).""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+14,Swedish Drama Corpus,SweDraCor,,https://dracor.org/swe,Swedish,,68,,NaN,,1880–1900,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,,NaN,https://github.com/dracor-org/swedracor,,"Homepage: ""Derived from the eDrama (https://litteraturbanken.se/dramawebben/sida/edrama) project""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+15,Tatar Drama Corpus,TatDraCor,,https://dracor.org/tat,Tatar,,3,,NaN,,NaN,,TEI,,,NaN,,drama,drama,,Monitor Corpus,monitor,https://dracor.org/doc/api,,CC0 1.0 Universal (CC0 1.0),https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc0-1-0,NaN,NaN,,"Homepage: ""provided through Tatar Electronic Library.""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+16,Reference corpus Middle High German ,ReM,,https://doi.org/10.34644/laudatio-dev-xCS3CnMB7CArCQ9C3LRB,Diachronic German,"Charvat, Vera Maria:
+Diachronic German (hochdeutsch, mitteldeutsch, niederdeutsch, oberdeutsch)",396,,NaN,,1050–1350,,"CorA XML, ANNIS",,"Vera Maria Charvat:
+CorA XML (custom), ANNIS (custom linguistic search and visualization tool)","parts of speech, morphology and lemma",,"prose, lyric","epic, lyric",,Reference corpus,reference,https://www.laudatio-repository.org/docs/elasticapi/  ,,CC BY-SA 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-sa-4-0 ,,NaN,NaN,,"Commentary: The laudatio repository uses a custom XML (CorA XML) and custom linguistic search and visualization tool (ANNIS); the ReM is only one of the corpora provided by the laudatio repository
+Homepage: ""The ""Reference Corpus of Middle High German"" (short: ReM) is a corpus of diplomatically transcribed and annotated texts from Middle High German (1050-1350) with a size of around 2 million word forms. It originated from the research projects ""Reference Corpus of Middle High German"" and ""Middle High German grammar"". Texts have been digitized and richly annotated, e.g. with parts of speech, morphology and lemma""","Homepage, personal information from Carolin Odebrecht","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+17,Deutsches Textarchiv,DTA,,https://www.deutschestextarchiv.de/,German,,4448,"Charvat, Vera Maria:
+[proposal: 4165], [homepage: 4448 (open) / 6482 (all texts, but some restricted access)]",NaN,,1500–1900+,,TEI,,"Vera Maria Charvat:
+(TEI P5 XML Subset ""DTA Basisformat"")","POS, tokenized, lemmatized",,NaN,,"Vera Maria Charvat:
+multigenre/various
+",Monitor Corpus,monitor,https://www.deutschestextarchiv.de/api ,,CC BY-NC 3.0,,,https://ride.i-d-e.de/issues/issue-6/deutsches-textarchiv/ ,NaN,,"Proposal: ""Deutsches Textarchiv, http://www.deutschestextarchiv.de/ (4165 texts, all in TEI)""
+Commentary: Multi-genre repositories with TEI-encoded texts; consists of a ""Kernkorpus"" (1468 texts) and additional corpora (5014 texts); metadata available in DC and CMDI; also OAI-PMH; very informative project-website with various features, documentation, download-area, etc. (but only available in German)","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+18,Folger Shakespeare Library,FolgerShake,artificialAcronym,https://shakespeare.folger.edu/,English,,37,,NaN,,1564(jul)–1616(greg),,"TEI, HTML, DOC, PDF, TXT, XML ",,"Vera Maria Charvat:
+TEI (tokel-level)
+PDF, DOC (word, Apple Pages, Apache Open Office, etc.), HTML, TXT (i.e., plain text), XML, and TEI Simple",NaN,,drama,drama,,Monitor Corpus,monitor,https://shakespeare.folger.edu/the-folger-shakespeare-api/,,CC BY-SA 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-sa-4-0 ,,NaN,NaN,,"Proposal: ""Shakespeare Folger Library: all (37) Shakespeare plays, very high encoding-depth ""
+Commentary: corpus of a single author; contained in ShakeDraCor","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+19,Anemoskala: Corpus of Modern Greek Poetry,Anemoskala,artificialAcronym,http://www.greek-language.gr/digitalResources/literature/tools/concordance/index.html,Greek,,NaN,,NaN,,1801–2000,,"TEI, TXT",,,NaN,,lyric,lyric,,Monitor Corpus,monitor,NaN,,NaN,,,https://ride.i-d-e.de/issues/issue-8/anemoskala/,NaN,,"Proposal: ""Anemoscala: Corpus of Modern Greek Poetry (19th and 20th century) ""
+Review: ""publication policy does not allow any kind of download, export or further reuse of any part of the textual corpus""; “plain text, TEI-XML files,
+metadata, concordance results”
+Commentary: no download possible; homepage only in Greek","Proposal, Homepage, Review","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+20,Wikisource,Wikisource,artificialAcronym,https://wikisource.org/wiki/Wikisource:TEI ,NaN,,NaN,,NaN,,NaN,,"PDF, HTML, EPUB",,,NaN,,NaN,,"Vera Maria Charvat:
+multigenre/various
+",General-Purpose Collection,general,NaN,,"GFDL, CC-BY, CC-BY-SA",,"Vera Maria Charvat:
+information derived from review",https://ride.i-d-e.de/issues/issue-8/wikisource/,NaN,,NaN,Review,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+21,European Literary Text Collection,ELTeC,,https://github.com/COST-ELTeC ,NaN,"Vera Maria:
+multilingual",2500,,NaN,,1840–1920,,TEI,,,NaN,,"prose, novels",epic,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,"An overview of the current state in ELTeC corpus building can be found here: https://distantreading.github.io/ELTeC/
+Work on the different ELTeC corpora is in progress here: https://github.com/COST-ELTeC
+A collection of relevant documentation can be found here: https://distantreading.github.io/ 
+ELTeC page on Zenodo, with archived releases, one for each corpus: https://zenodo.org/communities/eltec/",,"Proposal: ""One of the aims of the Distant Reading COST Action (2017-2021) is to coordinate the creation of a multilingual European Literary Text Collection (ELTeC). The ELTeC core will ultimately contain at least 10 linguistically annotated subcollections of 100 novels comparable in their internal structure in at least 10 different European languages, totalling at least 1,000 full-text novels from the period 1840-1920. The extended ELTeC will take the total number of full-text novels to at least 2,500. Novels have been chosen among major literary genres for availability and size. Chronological limits are due to constraints related to copyright and availability of quality full texts.""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+22,1000 Novel Corpus,1000Novel,artificialAcronym,http://hdl.handle.net/11321/312 ,Polish,,1000,,NaN,,NaN,,TXT,,,NaN,,"prose, novels",epic,,Based on a Research Question,specialized,NaN,,CC BY-SA 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-sa-4-0 ,,NaN,NaN,,"Homepage: ""Corpus of literary texts intended as benchmark collection for text categorization. It contains 1000 novels written in polish or translated to polish by various authors. Each text is stored as separate .txt file.""
+Commentary: Download all files: https://clarin-pl.eu/dspace/handle/11321/312?show=full# ",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+23,Annotating Literatures,AnnotLit,artificialAcronym,https://www.annotating-literature.org/,English,,NaN,,NaN,,NaN,,NaN,,,NaN,,"prose, lyric, fiction","epic, lyric",,Monitor Corpus,monitor,NaN,,NaN,,"Charvat, Vera Maria:
+Homepage: ""The website on which our finished annotations will be published is open to the public and licensed under Creative Commons""
+",NaN,http://www.annotating-literature.org/annotations/,,Commentary: They provide a styleguide for annotating: http://www.annotating-literature.org/wp-content/uploads/2020/09/Styleguide-2020-08-11.pdf ,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+24,The CLiGS textbox,CLiGS,artificialAcronym,https://github.com/cligs/textbox,"French, Spanish ",,NaN,,NaN,,NaN,,TEI,,,NaN,,NaN,,,based on a Research Question,specialized,NaN,,CC BY-SA 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-sa-4-0 ,,NaN,https://github.com/cligs/toolbox ,"Vera Maria Charvat:
+Toolbox
+",NaN,Homepage (Github),"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+25,Perseus digital library ,Perseus,artificialAcronym,http://www.perseus.tufts.edu/hopper/collections ,"Greek, Roman, Arabic",,NaN,,NaN,,NaN,,TXT,,,NaN,,NaN,,,Digital Critical Edition,digital_critical_edition,NaN,,NaN,,"Vera Maria Charvat:
+Homepage: ""Our copyright agreements with the publishers of our texts do not permit us to offer full text downloading for all works in Perseus at this time. Texts for which XML downloads are available are indicated as such by a creative commons license and links to download options. You will find these in the center of a text viewing page, below the main focus text. We do not offer other formats for texts at this time.""
+",https://ride.i-d-e.de/issues/issue-8/perseus/,NaN,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+26,Reference corpus Altdeutsch ,DiaGer,artificialAcronym,https://doi.org/10.34644/laudatio-dev-WiWkDnMB7CArCQ9CyBEw,Diachronic German,,129,,650000,,750–1050,,"TEI, ELAN, ANNIS",,"Vera Maria Charvat:
+ANNIS (custom linguistic search and visualization tool)
+","POS, ""Flexionsmorphologie""",,"prose, lyric","epic, lyric",,Reference Corpus,reference,https://www.laudatio-repository.org/docs/elasticapi/  ,,CC BY-NC-SA 3.0,,,NaN,http://www.deutschdiachrondigital.de/,,"Homepage (DE): ""Das Referenzkorpus Altdeutsch erfasst und annotiert die ältesten Sprachdenkmäler des Deutschen vom Beginn der kontinuierlichen schriftlichen Überlieferung um 750 bis etwa 1050 mit einem Umfang von ca. 650 000 Textwörtern. Aufgenommen werden alle in dieser Zeit überlieferten Texte des Althochdeutschen und des Altsächsischen in einer möglichst genauen Wiedergabestufe. Dabei werden die handschriftengetreuesten gedruckten Texteditionen zugrundegelegt. Die Annotation erfasst Header-Informationen, strukturelle (Wort, Satz, Zeile, Absatz etc.) und linguistische Annotationen (Part of Speech-Tagging, Flexionsmorphologie) sowie syntaktische Satzinformationen und erfolgt mit Unterstützung einer semi-automatischen Vorannotation, die mit Hilfe der digitalisierten Sprachstufen- und Textwörterbücher und Glossare zum Althochdeutschen und zum Altsächsischen erzeugt wurde. Die verschiedenen Stufen der Annotation werden in Form einer Mehrebenenarchitektur aufeinander bezogen.""
+Commentary: one of the corpora provided by the laudatio repository",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+27,Stanford Literary Lab,StanfordLitLab,artificialAcronym,https://litlab.stanford.edu/,NaN,,NaN,,NaN,,NaN,,NaN,,,NaN,,NaN,,,NaN,,NaN,,NaN,,,NaN,NaN,,"Homepage: ""The Stanford Literary Lab is a research collective that applies computational criticism, in all its forms, to the study of literature.""
+Commentary: No texts available, no possibility of download, just textual information about projects ",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+28,Théâtre Classique,TheaClass,artificialAcronym,http://www.theatre-classique.fr/pages/programmes/PageEdition.php,French,,1620,,12980645,,1601–1800,,TEI,,"Vera Maria Charvat:
+[but not available]",NaN,,"""Tragédies, Comédies, Proverbes, Tragi-comédies, Monologue, Drame, Saynètes, Opéras, Parodie, Pastorales, Parades""",drama,,Monitor Corpus,monitor,NaN,,NaN,,,https://ride.i-d-e.de/issues/issue-8/theatre-classique/,"statistic on corpus: http://www.theatre-classique.fr/pages/programmes/corpus.php
+analysis of person/actor in drama: http://www.theatre-classique.fr/pages/PagePersonnages.html ",,"Proposal: ""Théâtre Classique: 1.350 plays (from 17th and 18th century)""
+Commentary: TEI with tei-all invalid, undocumented customizations [M. Goebel set up a pipeline to do a cleaned up ingest into dracor]; from 17th and 18th century; homepage is entirely in French.","Proposal, Homepage, Review, personal information from project teammembers","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+29,Shakespeare His Contemporaries,SHC,artificialAcronym,https://github.com/JonathanReeve/corpus-SHC ,NaN,,509,"Charvat, Vera Maria:
+[proposal: 853], [homepage: 509]",NaN,,1550–1660,"Charvat, Vera Maria:
+[proposal: 1550–1700], [homepage: 1550-1660]",TEI,,,"[homepage: tokenized, linguistically annotated]",,drama,drama,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,Tool developed by authors of SHC corpus: https://github.com/DH-Box/corpus-downloader ,,"Proposal: ""Shakespeare His Contemporaries: 853 plays written between 1550–1700""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+30,Letteratura teatrale nella Biblioteca italiana,LTItal,artificialAcronym,http://www.letteraturaitaliana.net/autori/carlo_goldoni.html ,Italian,,139,,NaN,,13.Jh-today,,[TEI info from proposal],,,NaN,,"[drama, plays]",drama,,NaN,,NaN,,NaN,,,NaN,NaN,,"page in Italian, not very informative","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+31,Dramawebben,DramaWebben,artificialAcronym,https://litteraturbanken.se/dramawebben,"Swedish, Latin, French, German, English","Charvat, Vera Maria:
+Swedish
+[Dropdown of the Search offers: Latin, French, German, Swedish, English, modernised language, proofread, not proofread]",8234,"Charvat, Vera Maria:
+[Info from Proposal: 62]
+HP-Info: 
+The literature bank currently contains
+about
+    8234 works
+    3373 authors
+    293 232 pages etext
+    1 482 904 pages facsimile
+    394 190 260 words
+    1229 epub files",394190260,,1248–today,,TEI,,"Vera Maria Charvat:
+Information from proposal
+","[Homepage search lists the following possiblities:
+Search for a word or phrase, include conjugation forms, include older spellings, search by word meaning, search for word endings, search by part of speech""]",,"drama, plays",drama,,Monitor Corpus,monitor,NaN,,NaN,,,https://ride.i-d-e.de/issues/issue-6/litteraturbanken-the-swedish-literature-bank/,about-page: https://litteraturbanken.se/om/english.html (in English),,"Proposal: ""Dramawebben: 62 Swedish plays""
+Commentary: It looks as if Dramawebben is only one collection of the ""litteraturbanken""; files are available as e-pub; available in SweDraCor","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+32,Ludvig Holbergs skrifter,LHS,,http://holbergsskrifter.dk/holberg-public/view?docId=adm/main.xml,"Danish, Latin",,86,"Charvat, Vera Maria:
+36 comedies, 50 other texts",NaN,,NaN,"Vera Maria Charvat:
+1684–1754 dates of birth/death of Holberg",TEI,,,NaN,,"comedies, historical works, non-fiction/prose, essays, writings related to comedies, autobiography","epic, lyric, drama",,Monitor Corpus,monitor,NaN,,NaN,,,NaN,NaN,,"Proposal: ""Ludvig Holbergs skrifter: 36 comedies""
+Commentary: no info if texts are downloadable, seems you can only look at the texts online, no XML Files available, but there is a doku (in Danish): http://holbergsskrifter.dk/holberg-public/view?docId=adm/userHelp.xml (see ""Guidelines for textual encoding"")","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+33,Biblioteca Electrónica Textual del Teatro en Español de 1868–1936,BETTE,,https://github.com/HDAUNIR/BETTE,Spanish,,25,,NaN,,1868–1936,,TEI (P5),,,"acotaciones, nombre de personajes, lista de personajes, referencias a nombres de personajes (mediante nombre propio) dentro del texto, cursiva, encabezamientos, paratextos iniciales y finales 
+[translation: annotations, name of characters, list of characters, references to character names (by proper name) within the text, italics, headings, initial and final paratexts]",,"drama, plays",drama,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,https://zenodo.org/badge/latestdoi/104444419,,"Proposal: ""Biblioteca Electrónica Textual del Teatro en Español de 1868–1936 (BETTE): 25 Spanish plays""
+Commentary: contained in SpanDraCor; metadata encoded in TEIHeader; VIAF IDs ","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+34,Emothe: The Classics of Early Modern European Theatre,EMOTHE,,https://emothe.uv.es/en/,"Italian, English, French, Spanish",,113,,NaN,,NaN,,TEI,,,NaN,,"drama, plays",drama,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,NaN,,"Proposal: ""Emothe: The Classics of Early Modern European Theatre: 113 plays incl. translations (Italian, English, French, Spanish)""
+Commentary: certificate on homepage has expired (page not safe?)",Proposal,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+35,British Women Romantic Poets,BWRP,artificialAcronym,https://digital.lib.ucdavis.edu/projects/bwrp/,English,,NaN,,NaN,,1789–1832 ,,TEI,,"Vera Maria Charvat:
+Proposal: TEI XML driven",NaN,,poems,lyric,,General-Purpose Collection,general,NaN,,NaN,,,NaN,https://quod.lib.umich.edu/b/bwrp/,,"Proposal: ""British Women Romantic Poets, 1789–1832""
+Commentary: Currently only an older version is available. On the starting page, a note says ""The British Women Romantic Poets archive is being transitioned to a new home. This page will automatically redirect to the new location when it becomes available.""; 
+Homepage: ""Last content update May 23, 2001.""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+36,Diachronic Spanish Sonnet Corpus,DISCO,,http://prf1.org/disco/,Spanish,,4303,"Charvat, Vera Maria:
+[proposal: ca. 4000], [homepage: 4303]",NaN,,1401–1900,,TEI,,"Vera Maria Charvat:
+Proposal: TEI XML driven
+",NaN,,"poems, sonnets",lyric,,Monitor Corpus,monitor,NaN,,CC-BY licence,,,NaN,https://github.com/pruizf/disco,,"Proposal: ""DISCO (Diachronic Spanish Sonnet Corpus, over 4,000 sonnets by more than 1,000 authors, incl. canonical as well as non-canonical authors, 15th to the 19th century)""
+Homepage (about-section: https://prf1.org/disco/about.html): 15th to the 19th century; over 4,000 sonnets by more than 1,000 authors, incl. canonical as well as non-canonical authors; ""The raw texts were in most cases extracted from Biblioteca Virtual Miguel de Cervantes (1999), with some 18th-century texts coming from Wikisource.""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+37,Freiburger Anthologie,FRAN,artificialAcronym,http://freiburger-anthologie.de/,German,,1300,,NaN,,1720–1900,,TEI,,"Vera Maria Charvat:
+Proposal: TEI XML driven
+",NaN,,poems,lyric,,NaN,,NaN,,NaN,,,NaN,NaN,,"Proposal: ""Freiburger Anthologie (1.300 German-language poems from 1720–1900)""
+Commentary: network timeout; page not reachable",Proposal,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+38,Poetess Archive,PoetessArchive,artificialAcronym,https://poetessarchive.org/,English,,4000,"Charvat, Vera Maria:
+over 4000 entries",NaN,,1750–1900,,TEI,,"Vera Maria Charvat:
+Proposal: TEI XML driven
+",NaN,,poems,lyric,,General-Purpose ,general,NaN,,NaN,,,NaN,"Editorial Principles: https://poetessarchive.org/about/principles.html 
+Instructions: https://poetessarchive.org/about/template.html 
+XML-template: https://poetessarchive.org/about/annualtemplate-full.xml ",,"Proposal: ""Poetess Archive (flowery poetry written in Britain and America between 1750–1900)""
+Homepage: ""Work Flow: Every bibliographic entry in the Poetess Archive has been made into a TEI-encoded page (see ""Editorial Principles"" for more about TEI). We have created TEI templates and will continue to create them for those who wish to submit texts already encoded, but we accept submissions of any kind, and then TEI-encode them here. After that work, the TEI pages are:
+- created into HTML presenetation pages;
+- entered into our Oracle database;
+- made into RDFs so that the Poetess Archive Database is interoperable with NINES using the NINES COLLEX TOOL.""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+39,Russian Poetic Corpus,RusPoet,artificialAcronym,https://ruscorpora.ru/new/en/search-poetic.html ,Russian,,NaN,,NaN,,NaN,,TEI,,"Vera Maria Charvat:
+Proposal: TEI XML driven
+",NaN,,poems,lyric,,Reference Corpus,reference,NaN,,NaN,,,NaN,NaN,,"Proposal: ""Russian Poetic Corpus (part of the Russian National Corpus)""
+Homepage: ""The Poetry corpus, which facilitates searches not only by lexical and grammatical features but also by specifically poetical features, such as meter, rhyme types, etc,""
+related paper: https://wp.hse.ru/data/2018/12/29/1143017363/77LNG2018.pdf","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+40,"Corpus Sonetos del Siglo de Oro, ed. Borja Navarro Colorado",SonetSiglo,artificialAcronym,https://github.com/bncolorado/CorpusSonetosSigloDeOro,Spanish,,5000,"Charvat, Vera Maria:
+more than 5000",NaN,,1500–1700,,TEI,,"Vera Maria Charvat:
+Proposal: TEI XML driven
+",metrical patterns,,"poems, sonnets",lyric,,Monitor Corpus,monitor,NaN,,CC BY-NC 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-nc-4-0,,https://ride.i-d-e.de/issues/issue-6/corpus-of-spanish-golden-age-sonnets/ ,http://adso.gplsi.es/index.php/en/corpus-of-metre/,,"Proposal: ""Corpus Sonetos del Siglo de Oro, ed. Borja Navarro Colorado (more than 5000 Spanish sonnets, ca. 1500-1700, with metrical annotation)""","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+41,"TextGrid Repository, including “Digitale Bibliothek”",TextGrid,,https://textgrid.de/digitale-bibliothek,German,,NaN,,NaN,,NaN,,TEI,,,NaN,,NaN,,"Vera Maria Charvat:
+multigenre/various
+",Monitor Corpus,monitor,NaN,,CC BY 3.0 DE,,,NaN,https://gitlab.gwdg.de/dariah-de/textgrid-digitale-bibliothek,,"Proposal: ""Multi-genre repositories with TEI-encoded texts"" ""TextGrid Repository, including “Digitale Bibliothek” (all texts in TEI)""
+Homepage: ""Literatur, Märchen, Geschichte, Kulturgeschichte, Kunst, Musik, Philosophie, Soziologie, Nachschlagewerke""
+Commentary: more detailed info might be in the Gitlab-repo","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+42,Biblioteca italiana,BibIta,artificialAcronym,http://www.bibliotecaitaliana.it/,Italian,,3523,,NaN,,Middle Ages to the 20th century,,TEI,,"Vera Maria Charvat:
+(many, not all)",NaN,,NaN,,"Vera Maria Charvat:
+multigenre:
+Commenti, traduzioni…
+29
+Documenti
+167
+Letteratura teatrale
+171
+Lettere ed epistolar…
+93
+Memorialistica
+49
+Narrativa
+172
+Oratoria
+37
+Poesia
+614
+Prosa scientifica, m…
+6
+Testi storici e stor…
+81
+Traduzioni e volgari…
+27
+Trattati
+471
+memorialistica
+1
+oratoria
+",General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+only info in German on FAQ page available:
+""Kann ich die Texte frei herunterladen?
+Ja, aber denken Sie daran, dass sie unter das Urheberrecht fallen: Bei einer öffentlichen Weiterverwendung muss daher die Biblioteca Italiana als Quelle angegeben werden, genau wie bei einem Buch. Jede Form der Weiterverwendung zu kommerziellen Zwecken ist selbstverständlich untersagt.""
+",NaN,NaN,,"Proposal: ""Biblioteca italiana, http://www.bibliotecaitaliana.it/ (3523 texts, many of them in TEI)""
+Commentary: page only in Italian; focus on Italian literature; 3 collections; info is very well hidden (no direct links, you have to click your way to the relevant information and then translate it); metadata is available in METS, MAG; some files available in TEI P4 (e.g http://www.bibliotecaitaliana.it/scheda/bibit001300)
+Homepage (translation from Italian into German with Deepl; http://www.bibliotecaitaliana.it/page/726): ""Textkodierung:
+Bibit hat das Kodierungsschema der Text Encoding Initiative (TEI P4), das auf der Syntax der Extensible Markup Language (XML) basiert, als Textkodierungssprache übernommen.
+ Angesichts der Breite des TEI-Schemas wurden im Rahmen des Bibit-Projekts mehrere Kodierungsebenen festgelegt, denen ein Text unterworfen werden kann. Derzeit sind alle Texte in der digitalen Bibliothek auf den folgenden Kodierungsebenen:
+    Niveau 1: Strukturelle Gliederungen, ausdrückliche Zitate, Betonungen und Abschnitte in anderen Sprachen als der Basissprache des Textes
+    Niveau 2: Strukturelle Gliederungen mit expliziten Typangaben, explizite Zitate, Hervorhebungen, Überschriften von zitierten Texten und Abschnitten in anderen Sprachen als der Basissprache des Textes, einfache redaktionelle Eingriffe"" ","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+43,Oxford Text Archive,OTA,,https://ota.bodleian.ox.ac.uk/,"Algonquin, Amele, Ancient Greek, Anglo-Norman, Arabic, Bengali, Cameroon Pidgin, Classical Syriac, Croatian, Czech, Danish, Dutch, Egypt Sign Language, English, Esperanto, French, Fulah, Galician, German, Guarequena, Gujarati, Hanga, Hebrew, Hindi, Irigwe, Irish, Italian, Japanese, Jur Modo, Kurdish, Latin, Latvian, Malay, Malayalam, Mandarin Chinese, Middle English, Middle French, Middle High German, Middle Irish, Multiple languages, Nunggubuyu, Official Aramaic, Old English, Old French, Old Frisian, Old High German, Old Norse, Old Provençal, Old Spanish, Orya, Pali, Panjabi, Polish, Portuguese, Romanian, Romany, Russian, Sanskrit, Scots, Scottish Gaelic, Serbian, Serbo-Croatian, Slovenian, Spanish, Sumerian, Swedish, Tamil, Tibetan, Turkish, Urdu, Welsh","Charvat, Vera Maria:
+[25 languages]
+HomepageSearch lists 72 items (between brackets: count of documents in corpus):
+Algonquin (1)
+Amele (1)
+Ancient Greek (to 1453) (131)
+Anglo-Norman (1)
+Arabic (4)
+Bengali (1)
+Cameroon Pidgin (1)
+Classical Syriac (1)
+Croatian (1)
+Czech (4)
+Danish (3)
+Dutch (15)
+Egypt Sign Language (2)
+English (62445)
+Esperanto (1)
+French (142)
+Fulah (4)
+Galician (1)
+German (38)
+Guarequena (1)
+Gujarati (1)
+Hanga (1)
+Hebrew (8)
+Hindi (2)
+Irigwe (4)
+Irish (5)
+Italian (42)
+Japanese (4)
+Jur Modo (1)
+Kurdish (1)
+Latin (628)
+Latvian (1)
+Malay (individual language) (1)
+Malayalam (1)
+Mandarin Chinese (5)
+Middle English (1100-1500) (54)
+Middle French (ca. 1400-1600) (18)
+Middle High German (ca. 1050-1500) (38)
+Middle Irish (900-1200) (1)
+Multiple languages (5)
+No linguistic content (1)
+Nunggubuyu (1)
+Official Aramaic (700-300 BCE) (2)
+Old English (ca. 450-1100) (20)
+Old French (842-ca. 1400) (14)
+Old Frisian (1)
+Old High German (ca. 750-1050) (3)
+Old Norse (1)
+Old Provençal (to 1500) (4)
+Old Spanish (3)
+Orya (1)
+Pali (1)
+Panjabi (1)
+Polish (1)
+Portuguese (3)
+Romanian (1)
+Romany (2)
+Russian (2)
+Sanskrit (7)
+Scots (52)
+Scottish Gaelic (3)
+Serbian (2)
+Serbo-Croatian (2)
+Slovenian (1)
+Spanish (11)
+Sumerian (1)
+Swedish (5)
+Tamil (1)
+Tibetan (1)
+Turkish (7)
+Urdu (1)
+Welsh (159)",63854,"Charvat, Vera Maria:
+[Info from Proposal: 209 novels, 350 plays, 64 collections of poetry]
+HomepageSearch lists 63854 items",NaN,,BCE–present,,TEI,,"Vera Maria Charvat:
+most documents in TEI",NaN,,"multigenre:
+novels, plays, poetry","epic, lyric, drama",,General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+texts: various licenses
+metadata: Creative Commons Licence CC0
+",NaN,NaN,,"Proposal: ""Oxford Text Archive, https://ota.bodleian.ox.ac.uk/ (209 novels, 350 plays, 64 collections of poetry; most in TEI)""
+Homepage: ""A repository of full-text literary and linguistic resources. Thousands of texts in more than 25 languages.""; ""The Oxford Text Archive (OTA) is a repository of digital literary and linguistic resources for research and teaching. The OTA was created at and remains a part of the University of Oxford. We also offer advice to resource creators about best practice for creating digital resources, and to users of digital resources on how to benefit from existing resources.""
+Commentary: founded by Lou Burnard & Susan Hockey; currently under review (nov2021); they provide single entries in DC, via OAI-PMH, use CMDI, BIBTEX, handles, support open data (but also support restricted access data); clear info on licenses; The OTA is a registered CLARIN C Centre, and the repository is based on the CLARIN DSpace platform;
+OTA collections can be found via the VLO; records are displayed with their metadata and download possiblilities (HTML, TEI, epub, ?); advanced search: https://ota.bodleian.ox.ac.uk/repository/xmlui/discover?advance ","Proposal, Homepage","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+44,PHI Latin Texts: Classical Latin Texts. A Resource Prepared by The Packard Humanities Institute,PHI,,https://latin.packhum.org/,Latin,,NaN,,NaN,,NaN,,NaN,,,NaN,,classical latin texts,epic,,General-Purpose Collection,general,NaN,,NaN,,,https://ride.i-d-e.de/issues/issue-8/phi/,NaN,,"Review: “Although technologically obsolete by today’s standards (e. g. TEI/XML are not used), PHI is still one of the most widely
+used open access text collections of Roman literature.”
+Homepage: ""This website contains essentially all Latin literary texts written before A.D. 200, as well as some texts selected from later antiquity.""","Homepage, Review","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+45,Korpus der Literarischen Moderne/Corpus of Literary Modernism,KOLIMO,,https://kolimo.uni-goettingen.de,German,,NaN,,NaN,,NaN,,"TEI, TXT",,,POS,,NaN,,,based on a Research Question,specialized,NaN,,NaN,,,NaN,for examples see derived corpus: https://github.com/ingoboerner/kolimo-schnitzler,,"Homepage (redirected): ""The eXistdb-corpus “KOLIMO” is currently being overhauled for re-launch. It was built at the University of Göttingen 2015-2017.""; ""KOLIMO allows running quantitative profiles of language use. This means essentially “counting stuff at the language surface”. We work with the basic assumption that “style” may be assessed by means of frequency counts of those textual features that are easily distinguishable by the computer: characters, syllables, words, sentences, and so on, combining to measures such as word length, sentence length, type-token ratios, most frequent word lists, etc. Abundant stylometric research shows that this straightforward approach to style is quite fruitful. Of course, any more advanced analysis may start here, including cluster analysis of text-similarity based on most frequent word counts (e.g., delta), or entropy measures of lexical variation. Anything goes, as long as we have a hold on the discrete enties that make up the texts (characters, strings etc.).""
+combines texts taken from DTA, Textgrid, Project Gutenberg + Metadata""; ""KOLIMO is made available under a Creative Commons license, in line with the licenses of the source repositories. The texts from TextGrid are available under a CC-BY attribution license (see textgrid digitale bibliothek ). However, the Deutsches Textarchiv documents are made available under a CC BY-NC 3.0 license (non-commercial, see creative commons), meaning that commercial use of those texts is prohibited (see nutzungsbedigungen dta ). Gutenberg-DE documents are made available in a way that we understand as a CC-BY-NC-SA license (non-commercial, share alike, see creative commons), meaning that commercial use of those texts is prohibited, and remixing, transformation, or building upon the material only if using the same license as the original. When using the corpus, please ensure to cite the sources of the texts as required by the distinct statements, and give credit to the KOLIMO team listed below, for doing the text compilation, annotation, and working on the metadata""","Homepage, personal information from Ingo Boerner","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+46,Deutsches Lyrik Korpus/German Poetry Corpus,DLK,,https://github.com/tnhaider/DLK,German,,75141,,17335638,"Vera Maria Charvat:
+TGRID 'Verse': 16,049,526
+DTA: 'Lyrik': 2,986,912
+DLK v5: 17,335,638
+",NaN,,"TEI (P5), JSON",,,NaN,,poems,lyric,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,NaN,,"Commentary: lots of info in the github readme, needs to be filtered; corpus ca be downloaded in .zip files; compiled from Textgrid and DTA; Some digital research on poetry based on this corpus, see https://www.aesthetics.mpg.de/institut/mitarbeiterinnen/thomas-haider.html;; Especially: https://arxiv.org/abs/2102.08858; Lines + minimal metadata in a JSON object / python dictionary",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+47,Scottish Corpus of Texts & Speech,SCOTS,,https://www.scottishcorpus.ac.uk/,Scottish,,1316,,4587602,"Vera Maria Charvat:
+4.6 million words of text / 4,587,602 total words",1945–today,,NaN,,,"Homepage ""not grammatically annotated. Some mark-up is used in transcriptions of spoken material""",,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,"Homepage: ""The Scottish Corpora project has created large electronic corpora of written and spoken texts for the languages of Scotland. The Scottish Corpus of Texts & Speech (SCOTS) has been online since November 2004, and, after a number of updates and additions, has reached a total of nearly 4.6 million words of text, with audio recordings to accompany many of the spoken texts. A sister resource, the Corpus of Modern Scottish Writing, was launched in 2010, and now comprises 5.4 million words of written text with accompanying images.""; ""Search criteria ""General, spoken written""
+Commentary: They offer an advanced search and some analysis tools: https://www.scottishcorpus.ac.uk/advanced-search/ 
+https://www.scottishcorpus.ac.uk/tools/",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+48,The Corpus of Modern Scottish Writing,CMSW,,https://www.scottishcorpus.ac.uk/cmsw/,Scottish,,356,,5434830,"Vera Maria Charvat:
+5.5 million words / 5,434,830 total tokens
+",1700–1945,,TXT,,,NaN,,"""Administrative prose, expository prose, personal writing, instructional prose, religious prose, verse/drama, imaginative prose, journalism, orthoepists""","epic, drama, lyric",,General-Purpose Collection,general,NaN,,NaN,,,NaN,download entire corpus as plain text https://www.scottishcorpus.ac.uk/cmsw/download-corpus ,,"Homepage: ""The Corpus of Modern Scottish Writing (CMSW) is an electronic corpus of written and printed texts from the period 1700-1945, complementing the Helsinki Corpus of Older Scots (1450-1700) and the Scottish Corpus of Texts & Speech (1945-present day).""; ""147,129 total types; 5434830 total tokens""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+49,Corpus Resource Database,CorD,,https://varieng.helsinki.fi/CoRD/corpora/index.html,NaN,,NaN,,NaN,,NaN,,NaN,,,NaN,,NaN,,,diverse,,NaN,,NaN,,,NaN,NaN,,"Commentary: it is a database/list of corpora; ""CoRD provides descriptions of a large number of corpora, subcorpora and databases. Many more are forthcoming and we encourage all compilers of English language corpora to submit a description.""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+50,Austrian Books Online,ABO,,https://onb.ac.at/digitaler-lesesaal/austrian-books-online-abo,NaN,,NaN,,NaN,,1880–today,,NaN,,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,https://search.onb.ac.at/primo-explore/search?query=&tab=onb_fulltext&search_scope=ONB_aleph_abo&vid=ONB,,"Homepage (DE): ""Im Rahmen einer Public Private Partnership mit Google hat die Österreichische Nationalbibliothek seit 2011 insgesamt rund 600.000 urheberrechtsfreie Werke mit insgesamt 200 Millionen Seiten digitalisiert, darunter auch jene 200.000 Bücher, die sich im Prunksaal befinden. Damit sind alle digitalisierten Bücher erstmals vollständig und kostenlos zugänglich, können im Volltext durchsucht oder auch als PDF heruntergeladen werden. Diese erfolgreiche Zusammenarbeit mit Google wird nun fortgesetzt: Ab 2019 werden jene Jahrgänge historischer Werke digitalisiert und online gestellt, bei denen mittlerweile das Urheberrecht erloschen ist. Die „moving wall“, bis zu der digitalisiert wird, liegt derzeit beim Erscheinungsjahr 1880 und wird jährlich um ein Jahr verschoben; der große Sicherheitsabstand von 140 Jahren setzt sich aus der urheberrechtlichen Schutzfrist von 70 Jahren nach dem Tod der AutorInnen und 70 Lebensjahren ab Erscheinen ihrer Werke zusammen: Dadurch ist gewährleistet, dass selbst dann kein urheberrechtlich geschütztes Buch digitalisiert wird, wenn die AutorInnen zum Zeitpunkt der Veröffentlichung noch sehr jung waren und lange gelebt haben.""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+51,1-Satz-Korpus,1SatzCor,artificialAcronym,https://github.com/satzomat/corpus,German,,NaN,,NaN,,NaN,,"TEI, CSV, TXT",,,NaN,,"""Novellen, Romane, Maerchen""",epic,,Based on a Research Question,specialized,NaN,,NaN,,,NaN,NaN,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+52,Historisches Textkorpus,HistCor,artificialAcronym,https://www.ids-mannheim.de/lexik/abgeschlosseneprojekte/historischeskorpus/,German,,NaN,,45000000,"Vera Maria Charvat:
+""45 Millionen laufende Wörter""
+",1700–1918,,TEI ,,"Vera Maria Charvat:
+(many documents in TEI, not all)",NaN,,"""drama, humanities, legal texts, letters, narrative prose, historical newspapers, scientific texts, sermons, fairy tales, sagas,  ...""","epic, drama",,Reference Corpus,reference,NaN,,NaN,,"Vera Maria Charvat:
+""Aus urheberrechtlichen Gründen kann derzeit nur eine eingeschränkte Auswahl der Texte im Internet zur Recherche mittels COSMAS II angeboten werden.""
+",NaN,https://www2.ids-mannheim.de/cosmas2/ ,searchable via: https://www2.ids-mannheim.de/cosmas2/,"Homepage (DE: ""zwei Querschnittskorpora mit Texten der Sach- und Gebrauchsliteratur (z.B. Wörterbuch- und Lexikonartikel, Zeitungen und Zeitschriften, wissenschaftliche Texte, Gesetzestexte) und drei Korpora mit Textsammlungen aus der Reihe „Digitale Bibliothek“: Deutsche Literatur von Lessing bis Kafka (DB 1), Philosophie von Platon bis Nietzsche (DB 2), Deutsche Literatur von Frauen (DB 45). [...] Teilkorpora die Sagen, Kinder- und Hausmärchen der Brüder Grimm, Goethes Werke und die Marx-Engels-Gesamtausgabe.""
+contains the ""GerManC"": https://www.ids-mannheim.de/fileadmin/lexik/uwv/dateien/GerManC_Documentation.pdf ",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+53,Text Creation Partnership,TCP,,https://textcreationpartnership.org/,English,"Susanne Zhanial:
+primarily English, but 18th century collection also contains ""foreing-language works""",73000,,NaN ,"Vera Maria Charvat:
+""more than a billion words""
+",NaN,"Vera Maria Charvat:
+Homepage lists ""Early English Books Online, Eighteenth Century Collections Online, Evans Early American Imprints""","TCP (TEI P4) XML, SGML, TEI (P5)",,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,"Evans: https://www.dropbox.com/sh/inyy253jvytoxcu/AAAT9nMPo0sa5aXEgs5SC5aGa?dl=0, EEBO: https://www.dropbox.com/sh/pfx619wnjdck2lj/AAAeQjd_dv29oPymNoKJWfEYa?dl=0, ECCO: https://www.dropbox.com/sh/inhwjphw682i2gf/AAC8NixNye8Gp0smYBTly2Y9a?dl=0",,"Commentary: TCP hosts four collections (Early English Books Online, Navigations, Eighteenth Century Collection, and Evans Early American Imprints); every collection has its own site; Navigations collections also has a Github repository (https://github.com/Text-Creation-Partnership/EEBO-TCP-Collections-Navigations)",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+54,Project Gutenberg,PG,artificialAcronym,https://www.gutenberg.org/,NaN,,60000,"Susanne Zhanial:
+""over 60,000""",NaN,,NaN,,"TXT, HTML, EPUB, MOBI, LaTeX",,"Vera Maria Charvat:
+TXT, HTML (master formats), epub, mobi, sometimes LaTeX, prefer open and editable formats
+--> https://www.gutenberg.org/help/file_formats.html
+",NaN,,"""literary works and reference items of historical significance""; also audio books,music, pictures",epic,,General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+""Project Gutenberg eBooks may be freely used in the United States because most are not protected by U.S. copyright law. They may not be free of copyright in other countries. Readers outside of the United States must check the copyright terms of their countries before accessing, downloading or redistributing eBooks. We also have a number of copyrighted titles, for which the copyright holder has given permission for unlimited non-commercial worldwide use. The Project Gutenberg website is for human users only. Use of automated tools to access the website may trigger a block of your access.""
+",NaN,machine-read able (offline) catalogue: https://www.gutenberg.org/ebooks/offline_catalogs.html,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+55,Project Gutenberg Australia,PGAus,artificialAcronym,https://gutenberg.net.au/,English,,5000,,NaN,,NaN,,"TXT, HTML, EPUB, MOBI",,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+ebooks on this site are in the public domain in Australia
+",NaN,Index: https://gutenberg.net.au/gutindex_aus.txt,,Commentary: no new ebooks are added to the collection,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+56,Projekt Gutenberg-DE,PGGer,artificialAcronym,https://www.projekt-gutenberg.org/,Deutsch,,10000,,NaN,,NaN,,"TXT, HTML, EPUB, MOBI",,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+ebooks in the public domain, for private use, for commercial use - please get in touch for license
+",NaN,NaN,,"Homepage (DE): ""weltweit größte deutschsprachige Volltext-Literatursammlung""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+57,txtlab Multilingual Novels,txtlab,artificialAcronym,https://figshare.com/articles/dataset/txtlab_Novel450/2062002/3,"German, French, English",,450,,NaN,,1170 –1930,,TXT,,,NaN,,novels,epic,,Based on a Research Question,specialized,NaN,,CC BY-4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-4-0 ,,NaN,Download link: https://figshare.com/ndownloader/files/3686778,,Commentary: designed for use in teaching and research,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+58,LINHD POSTDATA Project,LINDH,,https://github.com/linhd-postdata,"Spanish, French, German, Italian, Latin, Dutch, Portuguese",,NaN,,NaN,,NaN,,"TXT, XML, TEI, HTML",,,"metrics, rhyme, entities","Susanne Zhanial:
+partly metrics, ryhme, entities",poetry,lyric,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,https://postdata.linhd.uned.es/,,"Commentary/Homepage: project aimed at ""Making poetry available online as machine-readable data will open a great world of possibilities of linking, indexing and extracting new information.""
+approx. 4 millionen verse lines, regarding to: https://postdata.linhd.uned.es/corpus-y-datasets/",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+59,Biblioteka Maksima Moshkova ,LibRu,artificialAcronym,http://lib.ru/,NaN,,NaN,,NaN,,NaN,,NaN,,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,Commentary: only available in Russian,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+60,Internet Biblioteka Alekseia Komarova ,ILibRu,artificialAcronym,https://ilibrary.ru/,NaN,,NaN,,NaN,,NaN,,NaN,,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,Commentary: only available in Russian,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+61,Russkaia virtual’naia Biblioteka ,RVB,artificialAcronym,https://rvb.ru/,NaN,,NaN,,NaN,,NaN,,NaN,,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,Commentary: only available in Russian,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+62,Fundamental’naia elektronnaia biblioteka „Russkaia literatura i fol’klor“,FEB,,http://www.feb-web.ru/,NaN,,NaN,,NaN,,11th century to 20th century,,NaN,,,NaN,,"literature, folklore, dictionaries, encyclopedias, Russian scholarship",epic,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,Commentary: only available in Russian,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+63,HathiTrust Digital Library,HATHI,artificialAcronym,https://www.hathitrust.org/,NaN,"Susanne Zhanial:
+Advanced search: over 30 languages",17000000,"Vera Maria Charvat:
+17 million items; collection of millions of titles digitized from libraries around the world",NaN,,NaN,,"PDF, EPUB, TXT, ZIP, JPG",,,NaN,,NaN,,,General-Purpose Collection,general,https://www.hathitrust.org/data,"Vera Maria Charvat:
+various APIs available
+",NaN,,,NaN,NaN,,Commentary: download of books and creation of collections possible with institutional login,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+64,“To be continued . . .”: The Australian Newspaper Fiction Database,TBC,artificialAcronym,http://cdhrdatasys.anu.edu.au/tobecontinued,English,,21000,,NaN,,19th and early 20th century,,NaN,,,NaN,,"fiction (novels, novellas, short stories)",epic,,Monitor Corpus,monitor,NaN,,CC BY 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-4-0 ,,NaN,NaN,,Commentary: links to TROVE for newspaper scans: https://trove.nla.gov.au/; corpus download as zip file,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+65,Biblioteca Virtual Miguel de Cervantes ,Cervantes,artificialAcronym,http://www.cervantesvirtual.com/,"Spanish, English",,NaN,,NaN,,NaN,,"EPUB, PDF, MARC21, HTML",,,NaN,,"literature, language, history, letters",epic,,General-Purpose Collection,general,NaN,,NaN,,,NaN,https://data.cervantesvirtual.com/?_ga=2.19868668.55021663.1655726653-1879338039.1655467666,,Commentary: corpus downloads available,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+66,Europeana,Europeana,artificialAcronym,https://www.europeana.eu/de ,NaN,"Vera Maria Charvat:
+38 languages - information derived from search catalogue",22559106,"Vera Maria Charvat:
+30.230.563 (images)
+22.559.106 (texts)
+770.724 (audio)
+337.580 (video)
+8.397 (3D)",NaN,,NaN,,NaN,,"Vera Maria Charvat:
+Text, video, audio, images, 3D",NaN,,NaN,,"Vera Maria Charvat:
+various/multigenre",General-Purpose Collection,general,https://pro.europeana.eu/page/apis ,,"Creative Commons CC0 1.0 Universal Public Domain Dedication, EUPL v1.2. License",,,NaN,https://github.com/europeana/,,"Homepage: ""cultural heritage material from over 4,000 different institutions""",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+67,Polona,Polona,artificialAcronym,https://polona.pl/ ,NaN,"Vera Maria Charvat:
+85 languages - information derived from search catalogue",3667722,,NaN,,NaN,,"XML RDF, JPEG, PDF, ZIP",,,NaN,,"books, periodicals, maps and atlases, ephemera, photographs, prints and drawings, manuscripts, postcards and musical scores",epic,,General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+Public, copyright publication (only accessible in library), available with permission
+",NaN,NaN,,Commentary: corpus partly available for download,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+68,Gallica,Gallica,artificialAcronym,https://gallica.bnf.fr,"French, Spanish, English, German, Portuguese, Latin, Greek, Romanian, Romansh, ",,9004194,"Susanne Zhanial:
+https://gallica.bnf.fr/GallicaEnChiffres
+",NaN,,NaN,,"TXT, EPUB, XML, PDF, JPEG",,,NaN,,"books, manuscripts, images, maps, newspapers, audio, music, video, objects",epic,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,"Commentary: The Bibliothèque nationale de France offers a Gallica iOS and Android application, can be downloaded for free",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+69,DIKDA - Písomné kultúrne dedičstvo Slovenska ,DIKDA,,https://dikda.eu/,NaN,"Vera Maria Charvat:
+50 languages - see: https://onk.snk.sk/browse?accessibility=public&sort=occurrence&category=languages",28244,"Susanne Zhanial:
+search catalogue - document types: https://onk.snk.sk/browse
+",NaN,,NaN,,NaN,,,NaN,,written documents,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,Homepage (translated from Slovak): The Digital Library and Digital Archive (DIKDA) was the largest digitisation project in Slovakia and its scope was unique in the context of the European region. It was successfully implemented by the Slovak National Library between 2012 and 2015. Its aim was the high-quality mass digitisation of library and archive collections and the preservation of written cultural heritage (paper) from inevitable degradation. ,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+70,Zlatý Fond SME,SME,,https://zlatyfond.sme.sk/autori#U,Slovak,,NaN,,NaN,,800 to present,"Susanne Zhanial:
+https://zlatyfond.sme.sk/chronologia",NaN,,"Susanne Zhanial:
+zfProof and zFEdit",NaN,,Slovak literature,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,Commentary: people can help edit works (zfedit),Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+71,Univerzitná Knižnica v Bratislave,UKB,artificialAcronym,http://digitalna.kniznica.info/browse,"Slovak, English, German, Arabic, Estonian, French, Russian, Slovene, Turkish",,99319,,NaN,,NaN,,NaN,,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,NaN,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+72,World Digital Library,WDC,artificialAcronym,https://www.loc.gov/collections/world-digital-library/about-this-collection/,NaN,"Susanne Zhanial:
+""more than 100 languages, including many lesser known and endangered languages""",18933,,NaN,,1000-2000,,NaN,,"Vera Maria Charvat:
+image, compressed data, PDF, online text, video, audio, web page
+",NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,"Vera Maria Charvat:
+Homepage: ""As a publicly supported institution, we generally do not own the rights to materials in our collections. You should determine for yourself whether or not an item is protected by copyright or in the public domain""",NaN,NaN,,NaN,"Homepage, search catalogue","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+73,Federacja Bibliotek Cyfrowych,FBC,,https://fbc.pionier.net.pl/,"Polish, German, Latin, English, French, Russian, Ukrainian, Lesing-Gelimi, Dutch, Czech ","Vera Maria Charvat:
+information derived from search options
+",8500000,,NaN,,NaN,,NaN,,,NaN,,NaN,,,General-Purpose Collection,general,NaN,,from public to BY-NC-SA,,,NaN,http://fbc.pionier.net.pl/pro/en/,,NaN,"Homepage, search catalogue","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+74,Open Texts,OpenTexts,,https://opentexts.world/,NaN,"Susanne Zhanial:
+85 languages",8000000,,NaN,,from 15th century onwards,"Susanne Zhanial:
+from 1455 to modern books
+","TXT, PDF, Alto XML, IIIF",,"Vera Maria Charvat:
+depends on source, plain text, PDF, Alto XML, IIIF manifest
+",NaN,,NaN,,,General-Purpose Collection,general,NaN,,NaN,,,NaN,https://github.com/opentexts/opentexts/,,"Commentary: Search engine; searches many other corpora, such as HaithiTrust, Cambridge University Library, DigitalNZ, etc., see: https://opentexts.world/about",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+75,Travel writings on Italy,TravelItal,artificialAcronym,https://sites.google.com/view/travelwritingsonitaly/home ,English,,30,,NaN,,19.–20. century,,"TEI, TXT",,,NaN,,"""travel writing""",epic,,Based on a Research Question,specialized,NaN,,NaN,,"Vera Maria Charvat:
+Homepage ""freely available sources""
+",NaN,NaN,,Commentary: all texts are also available via project gutenberg;; download of TEI & plain text files: calls for a google-account,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+76,Fashist Latin Texts,FLT,,https://flt.hf.uio.no/,Latin,,NaN,"Susanne Zhanial:
+counted 102 works",NaN,,1922–1943,,PDF,,,"author, works, themes, inscriptions",,"poetry, prose",lyric,"Susanne Zhanial:
+also images available under inscriptions",Digital Critical Edition,digital_critical_edition,NaN,,NaN,,"Vera Maria Charvat:
+The copyright for all Latin texts published on this website rests with their original author or publisher
+",NaN,NaN,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+77,"Musisque Deoque. A digital archive of Latin poetry, from its origins to the Italian Renaissance",MQDQ,,https://www.mqdq.it/public/index,Latin,,NaN,,NaN,,NaN,"Vera Maria Charvat:
+Homepage ""Latin poetry, from its origins to the Italian Renaissance""
+",NaN,,,"search by lemma, form, metrical scan, co-occurrences, metrical typology, distance/order, variants","Susanne Zhanial:
+https://www.mqdq.it/public/ricerca/avanzata","poetry, prose",lyric,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,https://www.mqdq.it/public/ce/corpora#HI_anchor,,NaN,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+78,Poeti d'Italia in lingua latina,PDI,artificialAcronym,http://mizar.unive.it/poetiditalia/public/,Latin,,NaN,,NaN,,1250–1550,,NaN,,,"word form, metrical scan, distance/order, variants, author, work",,poetry,lyric,,Monitor Corpus,monitor,NaN,,NaN,,,NaN,NaN,,Commentary: subcorpus of MQDQ (line 78),Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+79,Humanist and Renaissance Italian Poetry in Latin,HIP,artificialAcronym,https://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:PDILL,Latin,,NaN,,2802940,"Vera Maria Charvat:
+2,802,940 words
+","birth of Dante until the first half of the sixteenth century.
+",,XML,,,NaN,,Italian poetry,lyric,,NaN,,NaN,,NaN,,,NaN,Perseus Hopper: https://www.perseus.tufts.edu/hopper/opensource,,Commentary: Perseus also hosts other collections: https://www.perseus.tufts.edu/hopper/collections; some texts can be downloaded,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+80,NOSCEMUS,NOSCEMUS,,https://wiki.uibk.ac.at/noscemus/Main_Page,Latin,,1500,"Susanne Zhanial:
+c. 1500 works towards its end in 2022; currently: 1061 on https://transkribus.eu/r/noscemus/#/staticDirectory
+",NaN,,"early modern era, age of Scientific Revolution",,"XML, TXT",,,NaN,,selection of early modern works on science written in Latin,epic,,NaN,,NaN,,NaN,,,NaN,https://transkribus.eu/r/noscemus/#/staticDirectory,,NaN,"Wiki, Homepage NOSCEMUS","Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+81,LatTy on Zenodo,LatTy,artificialAcronym,https://doi.org/10.5281/zenodo.1454630,Latin,,90,,NaN,,NaN,,"XML, DOCX",,"Vera Maria Charvat:
+XML, XQuery, doc
+",NaN,,Tyrolean Neo-Latin texts,epic,,Based on a Research Question,specialized,NaN,,CC BY 4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-4-0 ,,NaN,https://github.com/nevenjovanovic/latty-cts/tree/1.1.10,,Commentary: downloads possible,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+82,LatTy under PhiloLogic,LatTyPhilo,artificialAcronym,http://solr.ffzg.hr/philo4/latty2/,Latin,,NaN,"Susanne Zhanial:
+project description speaks of 14000 works, see http://www.ffzg.unizg.hr/klafil/dokuwiki/doku.php/z:croatica-et-tyrolensia
+",NaN,,Renaissance to present day,,NaN,,,NaN,,Neo-Latin texts,epic,,Digital Critical Edition,digital_critical_edition,NaN,,NaN,,,NaN,http://www.ffzg.unizg.hr/klafil/dokuwiki/doku.php/z:croatica-et-tyrolensia,,Comentary: hardly any information on corpus available on homepage; project description see: http://www.ffzg.unizg.hr/klafil/dokuwiki/doku.php/z:croatica-et-tyrolensia,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+83,Academia Gustaviana (1632-1656) ladinakeelse juhuluule tekstikorpus,NeoLat,artificialAcronym,https://philologic.ut.ee/neolatina/,"Latin, Greek",,NaN,,NaN,,1850–1940,,NaN,,,NaN,,Latin and Greek texts,epic,,Digital Critical Edition,digital_critical_edition,NaN,,NaN,,,NaN,NaN,,Commentary: PhiloLogic4,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+84,Thomas More Concordances,TMC,artificialAcronym,https://essentialmore.org/concordances/,"Latin, English",,NaN,"Susanne Zhanial:
+all of Thomas More's works
+",NaN,,NaN,"Susanne Zhanial:
+Thomas More: 1478 - 1535; but also works linked to More (Magna Carta - 1215)
+",NaN,,,NaN,,works of Thomas More,,,Digital Critical Edition,digital_critical_edition,NaN,,NaN,,,NaN,NaN,,Commentary: downloads as PDFs,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+85,"Marko Marulić, Judita and Dauidias",MM,artificialAcronym,https://teipublisher.com/exist/apps/judita-davidias,Latin,,2,,NaN,,1450–1524,,"XML, ePub, PDF, LaTeX, XSL-FO",,,NaN,,works of Marko Marulic (Marcus Marulus),,,Digital Critical Edition,digital_critical_edition,NaN,,NaN,,,NaN,NaN,,Commentary: downloads possible,Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
+86,CAMENA on Zenodo,CAMENA,,https://doi.org/10.5281/zenodo.1454036,Latin,,1751,,50458045,"Vera Maria Charvat:
+50458045 tokens
+",early modern Europe,,XML,,,NaN,,"poetry, historical and political writings, letters, dictionaries, handbooks","lyric, epic",,Based on a Research Question,specialized,NaN,,CC-BY-SA-4.0,https://vocabs.acdh.oeaw.ac.at/archelicenses/cc-by-sa-4-0 ,,NaN,https://github.com/nevenjovanovic/camena-neolatinlit/tree/v0.0.1,,"Commentary: contains five collections: POEMATA, Neo-Latin poetry composed by German authors; HISTORICA & POLITICA, Latin historical and political writing; THESAURUS ERUDITIONIS, a reference collection of dictionaries and handbooks of the period 1500-1750; CERA, printed Latin letters, mostly by German scholars, from the period 1530-1770; and ITALI, works by Italian Renaissance humanists born before 1500. The collection ITALI has no XML files, so it was not included in this repository.; downloads possible",Homepage,"Vera Maria Charvat, Susanne Zhanial, Michal Mrugalski"
