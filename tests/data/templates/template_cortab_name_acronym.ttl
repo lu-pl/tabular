@@ -7,24 +7,21 @@
 {% set acronym = row_data['corpusAcronym'] %}
 {% set name = row_data["corpusName"] %}
 {% set corpus_name = row_data['corpusName'] | trim %}
-{% set counter = utils["counter"] %}
-{% set appellation_count_1 = counter() %}
-{% set appellation_count_2 = counter() %}
     
     
-# Field: corpusName
+    # Field: corpusName
 <https://{{lower_acronym}}.clscor.io/entity/corpus> a crmcls:X1_Corpus ;
-        crm:P1_is_identified_by <https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_1}}> .
+    crm:P1_is_identified_by <https://{{lower_acronym}}.clscor.io/entity/appellation/1> .
 
-<https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_1}}> a crm:E41_Appellation ;
+<https://{{lower_acronym}}.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
         crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
         rdf:value "{{name}}".
 
 # Field: corpusAcronym
 
 <https://{{lower_acronym}}.clscor.io/entity/corpus> a crmcls:X1_Corpus ;
-        crm:P1_is_identified_by <https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_2}}> .
+        crm:P1_is_identified_by <https://{{lower_acronym}}.clscor.io/entity/appellation/2> .
 
-<https://{{lower_acronym}}.clscor.io/entity/appellation/{{appellation_count_2}}> a crm:E41_Appellation ;
+<https://{{lower_acronym}}.clscor.io/entity/appellation/2> a crm:E41_Appellation ;
         crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/acronym> ;
         rdf:value "{{acronym}}" .
