@@ -1,6 +1,6 @@
 """Functionality for TaCL's --context-module flag."""
 
-import importlib
+import importlib.util
 import os
 import pathlib
 import sys
@@ -31,7 +31,7 @@ def load_module(file: os.PathLike, module_name: str | None = None) -> ModuleType
     return module
 
 
-module = load_module(pathlib.Path("./rp_composition_example/hr.py"))
+module = load_module(pathlib.Path("./click_custom.py"))
 
 
 def get_namespace_mapping(module: ModuleType) -> Mapping[str, Any]:
