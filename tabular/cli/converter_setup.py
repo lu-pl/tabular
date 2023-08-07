@@ -11,6 +11,7 @@ from tabular.cli.dataframe_utils import (
 )
 
 
+# add data parameter for TemplateConverter!!! -> --context-module flag
 def initialize_converter(converter_type: type[TemplateConverter],
                          table: pathlib.Path,
                          template: pathlib.Path,
