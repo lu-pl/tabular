@@ -37,7 +37,12 @@ _common_options = [
                  type=tuple,
                  cls=RequiredMultiOptions,
                  required_if="column",
-                 help=docs.rows)
+                 help=docs.rows),
+
+    click.option("--context-module",
+                 type=_ClickPath,
+                 help=docs.context_module,
+                 required=False)
 ]
 
 
@@ -74,7 +79,8 @@ def noparse(table: pathlib.Path,
             template: pathlib.Path,
             column: str,
             rows: tuple[Any, ...],
-            render_by_row):
+            context_module: pathlib.Path | None = None,
+            render_by_row: bool = False):
     """Generate Jinja2 renderings without prior parsing.
 
     \b
@@ -87,7 +93,8 @@ def noparse(table: pathlib.Path,
         table=table,
         template=template,
         column=column,
-        rows=rows
+        rows=rows,
+        context_module=context_module
     )
 
     # render according to strategy (table or row)
@@ -107,8 +114,9 @@ def graph(table: pathlib.Path,
           template: pathlib.Path,
           column: str,
           rows: tuple[Any, ...],
+          context_module: pathlib.Path | None = None,
           # https://mypy.readthedocs.io/en/stable/common_issues.html#variables-vs-type-aliases
-          format: _GraphFormatOptions):
+          format: _GraphFormatOptions = "ttl"):
     """Generate and parse Jinja2 renderings into an rdflib.Graph.
 
     \b
@@ -121,7 +129,8 @@ def graph(table: pathlib.Path,
         table=table,
         template=template,
         column=column,
-        rows=rows
+        rows=rows,
+        context_module=context_module
     )
 
     # serialize from rdflib.Graph instance according to format
