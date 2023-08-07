@@ -183,6 +183,9 @@ class TemplateConverter:
         """
         table_data = {"table_data": self._get_table_data()}
 
+        # bug fix: update data also for render
+        table_data.update(self.data)
+
         return self.template.render(table_data)
 
     # note: should this even be a a public method?
