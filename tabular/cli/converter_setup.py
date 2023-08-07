@@ -8,7 +8,7 @@ from tabular import TemplateConverter
 from tabular.cli.dataframe_utils import (
     get_dataframe_from_file,
     partition_dataframe
-    )
+)
 
 
 def initialize_converter(converter_type: type[TemplateConverter],
@@ -31,12 +31,12 @@ def initialize_converter(converter_type: type[TemplateConverter],
             dataframe=dataframe,
             column=column,
             rows=rows
-            )
+        )
 
     # 2. get a TemplateConverter
     converter = converter_type(
         dataframe=dataframe,
         template=template
-        )
+    )
 
     return converter
