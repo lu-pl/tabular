@@ -11,6 +11,7 @@ class CLIDocs:
     rows: str
     render_by_row: str
     format: str
+    context_module: str
 
 
 docs = CLIDocs(
@@ -36,5 +37,11 @@ docs = CLIDocs(
     format=(
         "Specifies a format for RDF serialization. "
         "This is a proxy for rdflib.Graph serialize."
+    ),
+
+    context_module=(
+        "Load all public symbols of a Python module into the template context. "
+        "Symbols will be available in a dictionary named after the module. "
+        "E.g. this allows to define a set of functions for use in a template."
     )
 )
