@@ -5,6 +5,9 @@ description = ""
 authors = ["Lukas Plank <lupl@tuta.io>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+tacl = 'tabular.tacl:tacl'
+
 [tool.poetry.dependencies]
 python = "^3.11"
 pandas = "^2.0.3"
