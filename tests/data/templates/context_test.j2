@@ -1,0 +1,7 @@
+{% for row in table_data %}
+
+variable = {{ test_module["some_variable"] }}
+count = {{ test_module["counter"]() }}
+table_data = {{ row["column 1 name"] }}
+
+{% endfor %}
