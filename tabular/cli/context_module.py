@@ -31,9 +31,6 @@ def load_module(file: os.PathLike, module_name: str | None = None) -> ModuleType
     return module
 
 
-module = load_module(pathlib.Path("./click_custom.py"))
-
-
 def get_namespace_mapping(module: ModuleType) -> Mapping[str, Any]:
     """Get a module mapping containing only public symbols."""
     namespace = {
@@ -43,6 +40,3 @@ def get_namespace_mapping(module: ModuleType) -> Mapping[str, Any]:
     }
 
     return namespace
-
-
-print(get_namespace_mapping(module))
