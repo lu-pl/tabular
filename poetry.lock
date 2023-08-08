@@ -249,13 +249,13 @@ i18n = ["Babel (>=2.7)"]
 
 [[package]]
 name = "lodkit"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "lodkit-0.1.1-py3-none-any.whl", hash = "sha256:1fd4d18805a70a83eb0e93b13f68463ddd78149540e30d4c0db6d6a0d9b45faa"},
-    {file = "lodkit-0.1.1.tar.gz", hash = "sha256:edacfdc0b3241bf0bed7193aa23d7c617fddbc5de8e3e5fd467b4e969928d647"},
+    {file = "lodkit-0.1.2-py3-none-any.whl", hash = "sha256:f7af842dfe50fb70dea39269728d3791dd573bb78967c6a2ee86b0697cbc75ab"},
+    {file = "lodkit-0.1.2.tar.gz", hash = "sha256:f6fdac75f264eb320adf67f6223a8261eef8ffa2097c82e8ad7e9b8b521594e0"},
 ]
 
 [package.dependencies]
@@ -264,7 +264,7 @@ docker = ">=6.1.3,<7.0.0"
 owlrl = ">=6.0.2,<7.0.0"
 pycurl = ">=7.45.2,<8.0.0"
 pytest = ">=7.3.1,<8.0.0"
-rdflib = ">=6.3.2,<7.0.0"
+rdflib = "7.0.0"
 reasonable = ">=0.2.2,<0.3.0"
 
 [[package]]
@@ -681,13 +681,13 @@ files = [
 
 [[package]]
 name = "rdflib"
-version = "6.3.2"
+version = "7.0.0"
 description = "RDFLib is a Python library for working with RDF, a simple yet powerful language for representing information."
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "rdflib-6.3.2-py3-none-any.whl", hash = "sha256:36b4e74a32aa1e4fa7b8719876fb192f19ecd45ff932ea5ebbd2e417a0247e63"},
-    {file = "rdflib-6.3.2.tar.gz", hash = "sha256:72af591ff704f4caacea7ecc0c5a9056b8553e0489dd4f35a9bc52dbd41522e0"},
+    {file = "rdflib-7.0.0-py3-none-any.whl", hash = "sha256:0438920912a642c866a513de6fe8a0001bd86ef975057d6962c79ce4771687cd"},
+    {file = "rdflib-7.0.0.tar.gz", hash = "sha256:9995eb8569428059b8c1affd26b25eac510d64f5043d9ce8c84e0d0036e995ae"},
 ]
 
 [package.dependencies]
@@ -801,4 +801,4 @@ test = ["websockets"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "909efacceb980763974de8eaacba1d3c00ff5546d26b7fc28ace7778dddcc8c1"
+content-hash = "0cdbf71bec2247e935090638b03e187e7412f5467039b6fa3226f0f471a3d570"
