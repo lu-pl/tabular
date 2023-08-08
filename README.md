@@ -1,6 +1,5 @@
-![<img src="lodkit.png" width=10% height=10%>](./tabular_logo_small.png)
 ![<img src="lodkit.png" width=10% height=10%>](https://raw.githubusercontent.com/lu-pl/tabular/main/tabular_logo_small.png)
-<!-- [](https://raw.githubusercontent.com/lu-pl/tabular/main/tabular_logo_small.png) -->
+
 # TabulaR
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
