@@ -2,6 +2,7 @@
 
 # TabulaRDF
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![PyPI version](https://badge.fury.io/py/tabulardf.svg)](https://badge.fury.io/py/tabulardf)
 
 TabulaRDF - Functionality for DataFrame to RDF conversions.
 
