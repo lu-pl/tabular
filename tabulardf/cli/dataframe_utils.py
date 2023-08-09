@@ -1,4 +1,4 @@
-"""DataFrame utilites for the TabulaR CLI."""
+"""DataFrame utilites for the TabulaRDF CLI."""
 
 import inspect
 import logging

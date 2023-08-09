@@ -1,15 +1,15 @@
-"""Functionality for setting up a TemplateConverter for the TabulaR CLI."""
+"""Functionality for setting up a TemplateConverter for the TabulaRDF CLI."""
 
 import pathlib
 
 from typing import Any, Optional
 
-from tabular import TemplateConverter
-from tabular.cli.dataframe_utils import (
+from tabulardf import TemplateConverter
+from tabulardf.cli.dataframe_utils import (
     get_dataframe_from_file,
     partition_dataframe
 )
-from tabular.cli.context_module import load_module, get_namespace_mapping
+from tabulardf.cli.context_module import load_module, get_namespace_mapping
 
 
 # add data parameter for TemplateConverter!!! -> --context-module flag

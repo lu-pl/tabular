@@ -2,7 +2,7 @@ from itertools import count
 from rdflib import Graph
 from rdflib.compare import isomorphic
 
-from tabular import TemplateGraphConverter
+from tabulardf import TemplateGraphConverter
 from tests.data import (
     tables,
     templates_path,

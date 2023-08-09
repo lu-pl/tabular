@@ -1,6 +1,6 @@
 """Module level imports."""
 
-from tabular.converters import (
+from tabulardf.converters import (
     TemplateConverter,
     TemplateGraphConverter,
     FieldGraphConverter,

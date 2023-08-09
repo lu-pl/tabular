@@ -1,9 +1,9 @@
-"""Pytest entry point for the TabulaR CLI noparse subcommand"""
+"""Pytest entry point for the TabulaRDF CLI noparse subcommand"""
 
 from click.testing import CliRunner
 
 from tests.data import templates_path, targets_txt_path, tables_path
-from tabular import tacl
+from tabulardf import tacl
 
 
 table = tables_path / "bookstore.csv"

@@ -1,4 +1,4 @@
-"""Type definition for tabuler"""
+"""Type definitions for TabulaRDF."""
 
 import os
 import pathlib

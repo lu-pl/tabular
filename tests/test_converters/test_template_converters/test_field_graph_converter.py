@@ -1,6 +1,6 @@
 """Pytest entry point for FieldGraphConverter tests."""
 
-from tabular import FieldGraphConverter
+from tabulardf import FieldGraphConverter
 
 from rdflib import Graph, Literal, URIRef, Namespace
 from rdflib.compare import isomorphic

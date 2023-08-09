@@ -1,10 +1,10 @@
-"""Pytest entry point for the TabulaR CLI graph subcommand"""
+"""Pytest entry point for the TabulaRDF CLI graph subcommand"""
 
 from click.testing import CliRunner
 from rdflib import Graph
 
 from tests.data import templates_path, tables_path
-from tabular import tacl
+from tabulardf import tacl
 
 
 template = templates_path / "template_cortab_name_acronym.ttl"

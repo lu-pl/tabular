@@ -8,7 +8,7 @@ from typing import Callable
 
 import pandas as pd
 
-from tabular.cli.dataframe_utils import (
+from tabulardf.cli.dataframe_utils import (
     EXTENSION_READ_METHODS,
     UnknownExtensionError,
     get_dataframe_from_file,

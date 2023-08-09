@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "tabular"
+name = "tabulardf"
 version = "0.1.0"
 description = ""
 authors = ["Lukas Plank <lupl@tuta.io>"]
@@ -21,6 +21,7 @@ rdflib = "^7.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
 
 [tool.pytest.ini_options]
 addopts = [

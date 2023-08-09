@@ -31,7 +31,7 @@ docs = CLIDocs(
 
     render_by_row=(
         "Boolean flag. If active, the render_by_row strategy is applied for rendering. "
-        "For rendering strategies see https://github.com/lu-pl/tabular#template-converters."
+        "For rendering strategies see <link>."
     ),
 
     format=(

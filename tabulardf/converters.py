@@ -1,4 +1,4 @@
-"""TabulaR.
+"""TabulaRDF converters.
 
 Functionality for DataFrame to RDF Graph conversions.
 """
@@ -23,7 +23,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 # from lxml.etree import XMLParser, _Element
 from rdflib import Graph, URIRef, Namespace
 
-from tabular.tabular_types import (
+from tabulardf.tabulardf_types import (
     _RulesMapping,
     _RenderStrategy,
     _TemplateReference

@@ -6,7 +6,7 @@ import pathlib
 
 from jinja2 import Template, Environment, FileSystemLoader, select_autoescape
 
-from tabular import TemplateConverter
+from tabulardf import TemplateConverter
 from tests.data import (
     templates_path,
     targets_graphs_path,

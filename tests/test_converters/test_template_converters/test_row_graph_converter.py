@@ -1,6 +1,6 @@
 """Pytest entry point for RowGraphConverter tests."""
 
-from tabular import RowGraphConverter
+from tabulardf import RowGraphConverter
 
 from rdflib import Graph, Literal, URIRef, Namespace
 from rdflib.compare import isomorphic
@@ -20,7 +20,7 @@ def row_raph_converter_rule(row_dict: dict) -> Graph():
     """row_rule for building a row graph.
 
     This callable gets passed the row data as a dictionary
-    in the context of a tabular.RowGraphConverter.
+    in the context of a tabulardf.RowGraphConverter.
     """
     corpus_acronym = row_dict["corpusAcronym"]
     corpus_acronym_lower = row_dict["corpusAcronym"].lower()

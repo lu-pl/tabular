@@ -1,4 +1,4 @@
-"""CLI for TabulaR Template conversions."""
+"""CLI for TabulaRDF Template conversions."""
 
 import pathlib
 
@@ -6,21 +6,21 @@ from typing import Any, Callable
 
 import click
 
-from tabular import TemplateConverter, TemplateGraphConverter
+from tabulardf import TemplateConverter, TemplateGraphConverter
 
-from tabular.tabular_types import (
+from tabulardf.tabulardf_types import (
     _ClickPath,
     _GraphFormatOptions,
     _GraphFormatOptionsChoice
 )
 
-from tabular.cli.click_custom import (
+from tabulardf.cli.click_custom import (
     RequiredIf,
     RequiredMultiOptions,
     DefaultCommandGroup
 )
-from tabular.cli.converter_setup import initialize_converter
-from tabular.cli.docs import docs
+from tabulardf.cli.converter_setup import initialize_converter
+from tabulardf.cli.docs import docs
 
 
 _common_options = [
@@ -60,7 +60,7 @@ def common_options(f: Callable) -> Callable:
 
 @click.group(cls=DefaultCommandGroup)
 def tacl():  # noqa: D403
-    """TabulaR CLI.
+    """TabulaRDF CLI.
 
     Command-line interface for converting tabular data
     using Jinja2 templating.
