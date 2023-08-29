@@ -18,7 +18,7 @@ Just like the `TemplateGraphConverter` class parses renderings into an `rdflib.G
 ## Usage
 TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
 
-Also a CLI for template conversions is provided, see [tacl](s) below.
+Also a CLI for template conversions is provided, see [tacl]("https://github.com/lu-pl/tabulardf#tacl") below.
 
 ### Template converters
 
