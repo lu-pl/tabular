@@ -15,10 +15,10 @@ Just like the `TemplateGraphConverter` class parses renderings into an `rdflib.G
 * python >= 3.11
 
 
-
-
 ## Usage
 TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
+
+Also a CLI for template conversions is provided, see [tacl](s) below.
 
 ### Template converters
 
@@ -239,5 +239,6 @@ As mentioned, `store` is a class level attribute for sharing state between calla
 Both RowgraphConverter and FieldGraphConverter produce the same output.
 
 
-### tacl: CLI for tabulaRDF temlate conversions.
-[todo]
+### TaCL
+TaCL is a humble CLI for tabulaRDF template conversions.
+[todo: description + examples]
