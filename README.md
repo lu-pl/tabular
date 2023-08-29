@@ -18,96 +18,226 @@ Just like the `TemplateGraphConverter` class parses renderings into an `rdflib.G
 
 
 ## Usage
-<!-- TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach. -->
+TabulaR provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
 
-<!-- ### Template converters -->
+### Template converters
 
-<!-- Template converters are based on the generic `TemplateConverter` class which allows to iterate over a dataframe and pass table data to Jinja renderings. -->
+Template converters are based on the generic `TemplateConverter` class which allows to iterate over a dataframe and pass table data to Jinja renderings.
 
-<!-- Two different render strategies are available through the `render` method and the `render_by_row` method respectively. -->
+Two different render strategies are available through the `render` method and the `render_by_row` method respectively.
 
-<!-- - With the `render` method, every template gets passed the entire table data as "table_data";  -->
-<!--   this means that iteration must be done in the template. -->
-<!-- - With the `render_by_row` method, for every row iteration the template gets passed the current row data (as "row_data") only; -->
-<!--   so iteration is done at the Python level, not in the template. -->
+- With the `render` method, every template gets passed the entire table data as "table_data";
+  this means that iteration must be done in the template.
+- With the `render_by_row` method, for every row iteration the template gets passed the current row data (as "row_data") only;
+  so iteration is done at the Python level, not in the template.
   
-<!-- #### Example -->
+The TemplateGraphConverter uses the `render_by_row` method and parses renderings into an `rdflib.Graph` instance.
 
-<!-- The following templates are designed to produce the same result using different rendering strategies. -->
+```python
+import pandas as pd
 
-<!-- Here the table iteration is done in the template: -->
-<!-- ```jinja -->
-<!-- {# table_template.j2 #} -->
+from jinja2 import Template
+from tabulardf import TemplateGraphConverter
 
-<!-- {% for row in table_data %} -->
-<!-- <book category="{{ row['category'] }}"> -->
-<!--   <title>{{ row["title"] }}</title> -->
-<!--   <author>{{ row["author"] }}</author> -->
-<!--   <year>{{ row["year"] }}</year> -->
-<!--   <price>{{ row["price"] }}</price> -->
-<!-- </book> -->
-<!-- {% endfor %} -->
-<!-- ``` -->
+table = [
+    {
+        "id": "rem",
+        "full_title": "Reference corpus Middle High German"
+    },
+    {
+        "id": "SweDracor",
+        "full_title": "Swedish Drama Corpus"
+    }
+]
 
-<!-- This template on the other hand depends on external iteration: -->
-<!-- ```jinja -->
-<!-- {# row_template.j2 #} -->
+dataframe = pd.DataFrame(data=table)
 
-<!-- <book category="{{ row_data['category'] }}"> -->
-<!--   <title>{{ row_data["title"] }}</title> -->
-<!--   <author>{{ row_data["author"] }}</author> -->
-<!--   <year>{{ row_data["year"] }}</year> -->
-<!--   <price>{{ row_data["price"] }}</price> -->
-<!-- </book> -->
-<!-- ``` -->
+template = Template(
+    """
+    @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-<!-- Below, `table_converter` uses the `table_template.j2` template and the `render` method and `row_converter` uses the `row_template.j2` template and the `render_by_row` method. -->
+    {% set acronym_lower = row_data['id'] | lower %}
 
-<!-- Both converters yield the same result. -->
+    <https://{{acronym_lower}}.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
+        crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
+        rdf:value "{{row_data['full_title']}}" .
+    """
+)
 
-<!-- ```python -->
-<!-- table = [ -->
-<!--     { -->
-<!--         'category': 'programming', -->
-<!--         'title': 'Fluent Python', -->
-<!--         'author': 'Luciano Ramalho', -->
-<!--         'year': 2022, -->
-<!--         'price': 50.99 -->
-<!--     }, -->
-<!--     { -->
-<!--         'category': 'web', -->
-<!--         'title': 'Learning XML', -->
-<!--         'author': 'Erik T. Ray', -->
-<!--         'year': 2003, -->
-<!--         'price': 39.95 -->
-<!--     } -->
-<!-- ] -->
+converter = TemplateGraphConverter(
+    dataframe=dataframe,
+    template=template
+)
 
-<!-- df = pd.DataFrame(data=table) -->
+print(converter.serialize())
+```
+
+Output:
+
+```turtle
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://rem.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
+    crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
+    rdf:value "Reference corpus Middle High German" .
+
+<https://swedracor.clscor.io/entity/appellation/1> a crm:E41_Appellation ;
+    crm:P2_has_type <https://core.clscor.io/entity/type/appellation_type/full_title> ;
+    rdf:value "Swedish Drama Corpus" .
+```
+
+This is not a simple text rendering (note that the prefix declarations are not repeated) but an `rdflib` serialization! 
+`TemplateGraphConverter.serialize` is a proxy for `rdflib.Graph.serialze`, so any serialization format can be generated.
 
 
-<!-- table_converter = TemplateConverter( -->
-<!--     dataframe=df, -->
-<!--     template="./table_template.j2" -->
-<!-- ) -->
+### Callable converters
+`TabulaRDF` provides two main approaches for pure Python/callable based table to RDF conversions, `RowGraphConverter` and `FieldGraphConverter`.
 
-<!-- print(table_converter.render()) -->
+`RowGraphConverter` takes a dataframe and a Python callable which takes a dict parameter and is responsible for returning a graph instance;
+for every row iteration over the dataframe this callable gets passed the row data as a dictionary; the generated subgraphs ("row graphs") are merged into a main graph.
 
-<!-- row_converter = TemplateConverter( -->
-<!--     dataframe=df, -->
-<!--     template="./row_template.j2" -->
-<!-- ) -->
+```python
+import pandas as pd
 
-<!-- print("".join(row_converter.render_by_row())) -->
-<!-- ``` -->
+from jinja2 import Template
+from tabulardf import RowGraphConverter
 
-<!-- Note that `TemplateConverter` produces *plain text* which in this case happens to be XML. A custom converter subclassing `TemplateConverter` can parse renderings into arbitrary object abstractions - see the `TemplateGraphConverter` class which parses renderings into an `rdflib.Graph` instance. -->
+from rdflib import Graph, URIRef, Literal, Namespace
+from rdflib.namespace import RDF
 
-<!-- > Obviously valid XML requires a root element; while it is easy to generate valid XML with the "table" render strategy (using the `render` method), the root element must be added externally (e.g. by passing the converter renderings to another template containing the root node or by embedding the `render_by_row` generator in another Iterable) if the "row" render strategy (using the `render_by_row` method) is used. -->
+table = [
+    {
+        "id": "rem",
+        "full_title": "Reference corpus Middle High German"
+    },
+    {
+        "id": "SweDracor",
+        "full_title": "Swedish Drama Corpus"
+    }
+]
 
-<!-- ### Python/callable converters -->
-<!-- [todo] -->
+dataframe = pd.DataFrame(data=table)
 
-<!-- ## Contribution -->
 
-<!-- Please feel free to open issues or pull requests. -->
+def row_rule(row_data: dict) -> Graph:
+    crm = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
+    subject_uri = URIRef(f"https://{row_data['id'].lower()}.clscor.io/entity/appellation/1")
+
+    triples = [
+        (
+            subject_uri,
+            RDF.type,
+            crm["E41_Appellation"]
+        ),
+        (
+            subject_uri,
+            crm["P2_has_type"],
+            URIRef("https://core.clscor.io/entity/type/appellation_type/full_title")
+        ),
+        (
+            subject_uri,
+            RDF.value,
+            Literal(row_data["full_title"])
+        )
+    ]
+
+    graph = Graph()
+
+    for triple in triples:
+        graph.add(triple)
+
+    return graph
+
+
+converter = RowGraphConverter(
+    dataframe=dataframe,
+    row_rule=row_rule)
+
+print(converter.serialize())
+```
+
+`FieldGraphConverter` on the other hand iterates over every field for every row in a dataframe; it applies callables to every *field* according to a mapping of column header names and callables responsible for returning a subgraph per field ("field graphs") which are then merged into a main graph.
+Callables in such are rule mapping are of arity 3, they receive `subject_field` (according to the `FieldGraphConverter`'s `subject_column` parameter), `object_field` (i.e. the value of the current field) and `store` (a class level dictionary for caching data).
+
+```python
+import pandas as pd
+
+from jinja2 import Template
+from tabulardf import FieldGraphConverter
+
+from rdflib import Graph, URIRef, Literal, Namespace
+from rdflib.namespace import RDF
+
+table = [
+    {
+        "id": "rem",
+        "full_title": "Reference corpus Middle High German"
+    },
+    {
+        "id": "SweDracor",
+        "full_title": "Swedish Drama Corpus"
+    }
+]
+
+dataframe = pd.DataFrame(data=table)
+
+
+def id_rule(subject_field, object_field, store) -> Graph:
+    subject_uri = URIRef(f"https://{subject_field}.clscor.io/entity/appellation/1")
+    crm = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
+
+    triples = [
+        (
+            subject_uri,
+            RDF.type,
+            crm["E41_Appellation"]
+        ),
+        (
+            subject_uri,
+            crm["P2_has_type"],
+            URIRef("https://core.clscor.io/entity/type/appellation_type/full_title")
+        )
+    ]
+
+    graph = Graph()
+
+    for triple in triples:
+        graph.add(triple)
+
+    return graph
+
+
+def full_title_rule(subject_field, object_field, store) -> Graph:
+    subject_uri = URIRef(f"https://{subject_field}.clscor.io/entity/appellation/1")
+
+    graph = Graph()
+    graph.add((subject_uri, RDF.value, Literal(object_field)))
+
+    return graph
+
+
+column_rules = {
+    "id": id_rule,
+    "full_title": full_title_rule
+}
+
+
+converter = FieldGraphConverter(
+    dataframe=dataframe,
+    subject_column="id",
+    subject_rule=str.lower,
+    column_rules=column_rules)
+
+print(converter.serialize())
+```
+
+If `subject_rule` is supplied, `subject_field` in a `column_rule` callable will be what `subject_rule` computes it to be.
+As mentioned, `store` is a class level attribute for sharing state between callables.
+
+Both RowgraphConverter and FieldGraphConverter produce the same output.
+
+
+### tacl: CLI for tabulaRDF temlate conversions.
+[todo]
