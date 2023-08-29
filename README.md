@@ -31,7 +31,7 @@ Two different render strategies are available through the `render` method and th
 - With the `render_by_row` method, for every row iteration the template gets passed the current row data (as "row_data") only;
   so iteration is done at the Python level, not in the template.
   
-The TemplateGraphConverter uses the `render_by_row` method and parses renderings into an `rdflib.Graph` instance.
+The `TemplateGraphConverter` class uses the `render_by_row` method and parses renderings into an `rdflib.Graph` instance.
 
 ```python
 import pandas as pd
@@ -93,7 +93,7 @@ This is not a simple text rendering (note that the prefix declarations are not r
 
 
 ### Callable converters
-`TabulaRDF` provides two main approaches for pure Python/callable based table to RDF conversions, `RowGraphConverter` and `FieldGraphConverter`.
+TabulaRDF provides two main approaches for pure Python/callable based table to RDF conversions, the `RowGraphConverter` class and `FieldGraphConverter` class.
 
 `RowGraphConverter` takes a dataframe and a Python callable which takes a dict parameter and is responsible for returning a graph instance;
 for every row iteration over the dataframe this callable gets passed the row data as a dictionary; the generated subgraphs ("row graphs") are merged into a main graph.
@@ -158,8 +158,11 @@ converter = RowGraphConverter(
 print(converter.serialize())
 ```
 
-`FieldGraphConverter` on the other hand iterates over every field for every row in a dataframe; it applies callables to every *field* according to a mapping of column header names and callables responsible for returning a subgraph per field ("field graphs") which are then merged into a main graph.
-Callables in such are rule mapping are of arity 3, they receive `subject_field` (according to the `FieldGraphConverter`'s `subject_column` parameter), `object_field` (i.e. the value of the current field) and `store` (a class level dictionary for caching data).
+`FieldGraphConverter` on the other hand iterates over every field for every row in a dataframe; it applies callables to every field according to a mapping of column header names and callables responsible for returning a subgraph per field ("field graphs") which are then merged into a main graph.
+Callables in such are rule mapping are of arity 3, they receive 
+- `subject_field` (according to the `FieldGraphConverter`'s `subject_column` parameter), 
+- `object_field` (i.e. the value of the current field) and 
+- `store` (a class level dictionary for caching data).
 
 ```python
 import pandas as pd
