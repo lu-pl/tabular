@@ -14,6 +14,19 @@ Just like the `TemplateGraphConverter` class parses renderings into an `rdflib.G
 
 * python >= 3.11
 
+## Installation
+
+TabulaRDF is available on PyPI:
+```shell
+pip install tabulardf
+```
+
+Also the TaCL CLI can be installed with [pipx](https://pypa.github.io/pipx/):
+```shell
+pipx install tabulardf
+```
+
+For installation from source either use [poetry](https://python-poetry.org/) or run `pip install .` from the package folder.
 
 ## Usage
 TabulaRDF provides two main approaches for table conversions, a template-based approach using the [Jinja2](https://jinja.palletsprojects.com/) templating engine and a pure Python/callable-based approach.
