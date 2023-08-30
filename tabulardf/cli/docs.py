@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 @dataclass
 class CLIDocs:
-    """Data container for TabulaR CLI documentation."""
+    """Data container for TabulaRDF CLI documentation."""
 
     column: str
     rows: str
